@@ -1,6 +1,6 @@
 import FeedCarousel from "@/components/custom/feed-carousel";
 import Footer from "@/components/custom/footer";
-import Hero from "@/components/custom/hero";
+import GrandNavigation from "@/components/custom/grand-nav";
 import TerbaikSection from "@/components/custom/landing/terbaik-section";
 import Navbar from "@/components/custom/navbar";
 import { Separator } from "@/components/ui/separator";
@@ -12,12 +12,12 @@ export default function Home() {
     <main className="-mt-28">
       <></>
       <Navbar landing={true} />
-      <Hero />
+
+      <GrandNavigation />
 
       <div className="absolute h-[150svh] min-h-svh top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/20  to-blue-950/80 bg-black -z-10"></div>
       <div className="min-h-svh bg-white rounded-[3.5rem] py-16 p-8 mx-auto flex flex-col gap-4 items-center justify-center">
         <h2 className="text-5xl font-black text-center">FOLLOW US ON INSTAGRAM</h2>
-        <span className="text-5xl font-black bg-black text-white w-max p-4 text-center mx-auto">@smayossuka</span>
         <div className="grid grid-cols-4 gap-4 w-full">
           <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
           <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
@@ -39,6 +39,7 @@ export default function Home() {
         <div className="bg-red-300 w-1/3 h-full rounded-[3.5rem]"></div>
       </div>
       <Separator />
+
       <div className="bg-blue-200 py-16 p-8 mx-auto flex flex-row items-center justify-center relative">
         <div className="flex flex-row max-w-screen-xl items-center justify-center gap-16">
           <div className="flex flex-col items-center justify-center z-10">
