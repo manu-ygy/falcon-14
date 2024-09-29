@@ -1,36 +1,35 @@
-# Gunakan official Bun image
-# Lihat semua versi di https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:1 AS base
-WORKDIR /usr/src/app
+FROM node:22-alpine as base
+RUN apk add --no-cache g++ make py3-pip libc6-compat
+WORKDIR /app
+COPY package*.json ./
+EXPOSE 3000
 
-# Instal dependencies ke directory temp untuk caching
-FROM base AS install
-RUN mkdir -p /temp/dev
-COPY package.json bun.lockb /temp/dev/
-RUN cd /temp/dev && bun install --frozen-lockfile
-
-# Install dependencies untuk production (exclude devDependencies)
-RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile --production
-
-# Copy node_modules dari temp directory dan project files
-FROM base AS prerelease
-COPY --from=install /temp/dev/node_modules node_modules
+FROM base as builder
+WORKDIR /app
 COPY . .
+RUN npm run build
 
-# [optional] Build nuxt untuk production
+
+FROM base as production
+WORKDIR /app
+
 ENV NODE_ENV=production
-RUN bun run build
+RUN npm ci
 
-# Copy production dependencies dan source code ke final image
-FROM base AS release
-COPY --from=install /temp/prod/node_modules node_modules
-COPY --from=prerelease /usr/src/app/ .
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+USER nextjs
 
-# Jalankan aplikasi Nuxt.js
-USER bun
-EXPOSE 2000/tcp
-ENV HOST=0.0.0.0
-ENV PORT=2000
-ENTRYPOINT [ "bun", "run", "start" ]
+
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+
+CMD npm start
+
+FROM base as dev
+ENV NODE_ENV=development
+RUN npm install 
+COPY . .
+CMD npm run dev
