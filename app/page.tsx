@@ -1,6 +1,7 @@
 import FeedCarousel from "@/components/custom/feed-carousel";
 import Footer from "@/components/custom/footer";
 import GrandNavigation from "@/components/custom/grand-nav";
+import Hero from "@/components/custom/hero";
 import TerbaikSection from "@/components/custom/landing/terbaik-section";
 import Navbar from "@/components/custom/navbar";
 import { Separator } from "@/components/ui/separator";
@@ -10,12 +11,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="-mt-28">
-      <></>
       <Navbar landing={true} />
-
-      <GrandNavigation />
-
-      <div className="absolute h-[150svh] min-h-svh top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/20  to-blue-950/80 bg-black -z-10"></div>
+      <Hero/>
+      <div className="absolute h-[150svh] min-h-svh top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/20  to-blue-950/80 bg-black -z-20"></div>
       <div className="min-h-svh bg-white rounded-[3.5rem] py-16 p-8 mx-auto flex flex-col gap-4 items-center justify-center">
         <h2 className="text-5xl font-black text-center">FOLLOW US ON INSTAGRAM</h2>
         <div className="grid grid-cols-4 gap-4 w-full">
@@ -61,6 +59,7 @@ export default function Home() {
       </div>
       <Separator />
       <TerbaikSection />
+      <GrandNavigation />
       <Footer />
     </main>
   );

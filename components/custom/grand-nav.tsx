@@ -10,30 +10,17 @@ const HeroCatalogItem = () => {
 }
 const Hero = () => {
     return (
-        <div className="flex gap-6 min-h-svh h-svh w-full text-white p-24">
+        <div className="flex gap-6 min-h-svh h-svh w-full text-white p-24 pt-32">
             <div className="flex flex-col gap-8">
                 <h1 className="font-black text-4xl px-4 tracking-wider uppercase w-[calc(50vw-14rem)]">Tentang Kami</h1>
                 <HeroCatalogItem/>
             </div>
-            
             <HeroCatalogItem/>
-
             <div className = "flex flex-col w-full gap-6">
                 <HeroCatalogItem/>
                 <HeroCatalogItem/>
             </div>
     
-            {/*
-            <div className='grid grid-cols-2 w-full h-full max-w-screen-xl gap-4 p-8 pb-16 mx-auto'>
-                <div className='ps-16 flex flex-col gap-4'>
-                    <h1 className='text-end font-black text-5xl px-4 tracking-wider uppercase'>Tentang Kami</h1>
-                    <HeroCatalogItem content="Kurikulum" />
-                </div>
-                <HeroCatalogItem />
-                <HeroCatalogItem />
-                <HeroCatalogItem />
-            </div>
-            */}
         </div>
     )
 }
