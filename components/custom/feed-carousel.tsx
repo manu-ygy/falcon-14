@@ -33,12 +33,12 @@ export default function FeedCarousel() {
   }, [api])
 
   return (
-    <div className="mx-auto w-full">
+    <div className="mx-auto w-full h-full flex-1">
       <Carousel setApi={setApi} className="w-full rounded-[3rem] overflow-hidden">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
-              <Card className="bg-stone-600 rounded-[3.5rem]">
+              <Card className="bg-stone-600 rounded-[3rem]">
                 <CardContent className="flex aspect-video items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>

@@ -9,43 +9,43 @@ const cards = [
         title: "Terampil",
         description: "Kami mengembangkan berbagai kegiatan intrakurikuler, kokurikuler dan ekstrakurikuler untuk melatih keterampilan siswa sehingga mereka memiliki kemampuan untuk bertindak dengan cekatan, gesit, lincah dan sistematis.",
         icon: GearFine,
-        bgStyle: "bg-blue-400"
+        bgStyle: "bg-gradient-to-br from-blue-900 to-blue-950/70"
     },
     {
         title: "Edutaiment",
         description: "Kami menyelenggarakan pembelajaran berkualitas dan menyenangkan dengan memadukan muatan pendidikan (edukasi) dan hiburan (entertaiment) secara harmonis.",
         icon: Lego,
-        bgStyle: "bg-orange-400"
+        bgStyle: "bg-gradient-to-br from-yellow-900 to-yellow-950/70"
     },
     {
         title: "Religius",
         description: "Kami menyelenggarakan pembelajaran berkualitas dan menyenangkan dengan memadukan muatan pendidikan (edukasi) dan hiburan (entertaiment) secara harmonis.",
         icon: HandsPraying,
-        bgStyle: "bg-yellow-400"
+        bgStyle: "bg-gradient-to-br from-red-900 to-red-950/70"
     },
     {
         title: "Bahasa Asing",
         description: "Kami memberikan pengalaman belajar kepada siswa untuk meningkatkan penguasaan bahasa asing selain bahasa inggris dengan harapan lulusan SMA Yos Sudarso dapat bersaing di kancah global.",
         icon: Translate,
-        bgStyle: "bg-green-400"
+        bgStyle: "bg-gradient-to-br from-blue-900 to-blue-950/70"
     },
     {
         title: "Aktif & Kreatif",
-        description: "Kami mendorong siswa/i untuk terlibat dalam berbagai kegiatan dan mampu membuat program-program yang konstekstual, sesuai perkembangan ilmu pengetahuan dan teknologi untuk mengembangkan kemampuan siswa-siswi dalam menciptakan ide atau gagasan baru, unik dan berbeda yang bermanfaat bagi masa depan.",
+        description: "Kami mendorong siswa/i untuk terlibat dalam berbagai kegiatan yang mengembangkan kemampuan siswa-siswi dalam menciptakan ide atau gagasan baru, unik dan berbeda yang bermanfaat bagi masa depan.",
         icon: LightbulbFilament,
-        bgStyle: "bg-purple-400"
+        bgStyle: "bg-gradient-to-br from-yellow-900 to-yellow-950/70"
     },
     {
         title: "Inovatif",
         description: "Kami memberikan ruang belajar yang luas untuk memperkuat kemampuan siswa-siswi dalam mewujudkan ide atau gagasan pembaharuan yang lebih baik dan bermanfaat bagi masa depan.",
         icon: Rocket,
-        bgStyle: "bg-red-400"
+        bgStyle: "bg-gradient-to-br from-red-900 to-red-950/70"
     },
     {
         title: "Karakter",
         description: "Kami tidak hanya membentuk siswa-siswi untuk memiliki kemampuan dalam bidang akademik saja, melainkan tetap mengutamakan agar siswa-siswi memiliki karakter yang baik meliputi: empati, adaptif, disiplin, jujur, tanggungjawab, mandiri dan berjiwa kepemimpinan.",
         icon: Smiley,
-        bgStyle: "bg-teal-400"
+        bgStyle: "bg-gradient-to-br from-blue-900 to-blue-950/70"
     },
 ]
 
@@ -73,14 +73,14 @@ function TerbaikCarousel() {
             <Carousel setApi={setApi} className="w-full">
                 <CarouselContent>
                     {cards.map((e, index) =>
-                        <CarouselItem key={index}  className="md:basis-1/2 lg:basis-1/3 grid place-items-center">
-                            <div className="w-96 h-max rounded-2xl flex flex-col items-center relative">
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 grid place-items-center">
+                            <div className="w-full h-full rounded-2xl flex flex-col items-center justify-start relative">
                                 <div className="bg-white border border-border shadow-md rounded-2xl w-max p-2 z-10">
                                     <e.icon className="w-16 h-16" weight="fill" />
                                 </div>
-                                <p className="z-10 text-center text-2xl font-bold mt-2">{e.title}</p>
-                                <p className="z-10 text-lg py-6 px-8">{e.description}</p>
-                                <div className={cn("rounded-2xl  absolute top-8 bottom-0 left-0 right-0", e.bgStyle)}>
+                                <p className="z-10 text-center text-2xl font-bold mt-2 text-white">{e.title}</p>
+                                <p className="z-10 text-base py-6 px-8 text-white">{e.description}</p>
+                                <div className={cn("rounded-2xl bg-black absolute top-8 bottom-0 left-0 right-0", e.bgStyle)}>
                                 </div>
                             </div>
                         </CarouselItem>
@@ -95,8 +95,8 @@ function TerbaikCarousel() {
                         </CarouselItem>
                     ))} */}
                 </CarouselContent>
-                <CarouselPrevious className='disabled:opacity-0 bg-black text-white transition-all' />
-                <CarouselNext className='disabled:opacity-0 bg-black text-white transition-all' />
+                <CarouselPrevious className='disabled:opacity-0 transition-all -left-24 max-lg:-left-6' />
+                <CarouselNext className='disabled:opacity-0 transition-all -right-24 max-lg:-right-6' />
             </Carousel>
         </div>
     )
@@ -105,11 +105,17 @@ function TerbaikCarousel() {
 
 const TerbaikSection = () => {
     return (
-        <div className="min-h-svh bg-white rounded-[3.5rem] py-16 p-8 mx-auto flex flex-col gap-4 items-center justify-center">
-            <h2 className="text-5xl font-black text-center"><span className="bg-blue-300 px-2">T</span><span className="bg-orange-300 px-2">E</span><span className="bg-yellow-300 px-2">R</span><span className="bg-green-300 px-2">B</span><span className="bg-purple-300 px-2">A</span><span className="bg-red-300 px-2">I</span><span className="bg-teal-300 px-2">K</span></h2>
-            <span className="text-5xl font-black bg-black text-white w-max p-4 text-center mx-auto">@smayossuka</span>
-            <div className='max-w-screen-xl flex flex-col gap-4'>
-                <TerbaikCarousel/>
+        <div className="min-h-svh bg-white rounded-[3.5rem] p-8 mx-auto flex flex-col items-center justify-center gap-8">
+            {/* <h2 className="text-5xl font-black text-center"><span className="bg-blue-300 px-2">T</span><span className="bg-orange-300 px-2">E</span><span className="bg-yellow-300 px-2">R</span><span className="bg-green-300 px-2">B</span><span className="bg-purple-300 px-2">A</span><span className="bg-red-300 px-2">I</span><span className="bg-teal-300 px-2">K</span></h2> */}
+            {/* <span className="text-5xl font-black bg-black text-white w-max p-4 text-center mx-auto">@smayossuka</span> */}
+            <div className='flex flex-col gap-8 md:bg-neutral-200 md:border rounded-[3.5rem] w-full h-full justify-center items-center md:py-16 py-8'>
+                <div className='flex flex-col'>
+                    <span className="text-2xl font-bold text-center mx-auto">Keunggulan YOSUKA untuk menjadi</span>
+                    <span className="text-6xl font-black text-center mx-auto tracking-widest">TERBAIK</span>
+                </div>
+                <div className='max-w-screen-lg w-full flex flex-col gap-4 border border-border rounded-[3rem] p-4 bg-white'>
+                    <TerbaikCarousel />
+                </div>
             </div>
         </div>
     )

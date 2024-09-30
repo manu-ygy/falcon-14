@@ -19,6 +19,7 @@ import { Button } from "../ui/button"
 import { Basketball, CaretDown, Chalkboard, CreditCard, EnvelopeOpen, Globe, GraduationCap, Keyboard, Megaphone, PhoneCall, Scroll, Sparkle, Star, User, UsersThree } from "@phosphor-icons/react/dist/ssr"
 import { Settings } from "lucide-react"
 import { useMotionValueEvent, useScroll } from "framer-motion"
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 const navigationLinks = [
     {
@@ -97,9 +98,8 @@ interface INavbarProps {
 }
 
 const Navlogo = () => {
-
     return (
-        <Link href="/" className="flex flex-row gap-4">
+        <Link href="/" className="flex flex-row gap-4 ">
             <Logo />
             <div className="flex flex-col">
                 <span className="text-lg font-bold">SMA Yos Sudarso</span>
@@ -107,6 +107,15 @@ const Navlogo = () => {
             </div>
         </Link>
     )
+}
+
+const Navprofile = () => {
+    return <div className="flex flex-row">
+        <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+    </div>
 }
 
 const Navbar = ({ landing = false }: INavbarProps) => {
