@@ -1,11 +1,11 @@
 import FeedCarousel from "@/components/custom/feed-carousel";
 import Footer from "@/components/custom/footer";
-import GrandNavigation from "@/components/custom/grand-nav";
+import GrandNavigation from "@/components/custom/landing/grand-nav";
 import Hero from "@/components/custom/hero";
 import ArticleSection from "@/components/custom/landing/articles-section";
 import SocialSection from "@/components/custom/landing/social-section";
 import TerbaikSection from "@/components/custom/landing/terbaik-section";
-import WelcomeSection from "@/components/custom/landing/welcome-section";
+import CarouselSection from "@/components/custom/landing/carousel-section";
 import Navbar from "@/components/custom/navbar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -42,7 +42,7 @@ export default function Home() {
 
       <TerbaikSection />
 
-      <WelcomeSection />
+      <CarouselSection />
       <SocialSection />
       <GrandNavigation />
       <Footer />

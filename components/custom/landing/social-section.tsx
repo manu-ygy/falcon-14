@@ -39,30 +39,30 @@ const socialLinks = [
     },
 ]
 const SocialItem = ({ item }: any) => {
-    return <div className="border border-border p-6 gap-8 flex flex-row items-center justify-center rounded-2xl">
-        <div className="flex flex-col gap-2 flex-1 max-w-xl">
-            <div className="flex flex-row gap-1">
-                <item.platformIcon className={cn("w-6 h-6", item.platformIconStyle)} size={24} weight="fill" /><span className="font-medium">{item.platform}</span>
-            </div>
-            <h2 className="text-3xl font-black">{item.title}</h2>
-            <p className="text-muted-foreground">{item.description}</p>
-        </div>
+    return <div className="w-full border border-slate-300/70 p-6 gap-4 flex flex-row items-center justify-center rounded-2xl">
+        <item.platformIcon className={cn("", item.platformIconStyle)} size={32} weight="fill"/>
+        <h2 className="text-xl font-black">{item.title}</h2>
     </div>
 }
 const SocialSection = () => {
     return (
-        <div className="bg-white rounded-[3.5rem] py-12 mx-auto flex flex-col gap-16 items-center justify-center">
-            <h2 className="text-5xl font-black text-center">Tetap terhubung dengan kami</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-8'>
-                {socialLinks.map((e) => <SocialItem item={e} key={e} />)}
+        <div className = "w-full h-auto relative flex flex-col items-center">
+            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3LkZwfdPNfCLlY8AWxwUtT6HXPqm3NU6Pw&s" className="w-1/3 h-auto mask-image-b mask-image-start-80 translate-y-1/4 -z-10 select-none" width={312} height={312} alt = "Icon"/>
+
+            <div className="rounded-[3.5rem] py-12 mx-auto flex flex-col gap-16 items-center justify-center">
+                <h2 className="text-5xl font-black text-center uppercase">Tetap terhubung</h2>
+                <div className='flex gap-4 px-8'>
+                    {socialLinks.map((e) => <SocialItem item={e} key={e} />)}
+                </div>
+                
+                {/* <div className="grid grid-cols-4 gap-4 w-full">
+            <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
+            <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
+            <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
+            <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
+            </div> */}
             </div>
-            
-            {/* <div className="grid grid-cols-4 gap-4 w-full">
-          <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
-          <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
-          <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
-          <div className="aspect-square w-full h-auto bg-green-400 rounded-2xl even:mt-20"></div>
-        </div> */}
+
         </div>
     )
 }
