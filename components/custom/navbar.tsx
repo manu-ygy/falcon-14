@@ -16,79 +16,72 @@ import {
 } from "@/components/ui/navigation-menu"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuShortcut, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Button } from "../ui/button"
-import { Basketball, CaretDown, Chalkboard, CreditCard, EnvelopeOpen, Globe, GraduationCap, Keyboard, Megaphone, PhoneCall, Scroll, Sparkle, Star, User, UsersThree } from "@phosphor-icons/react/dist/ssr"
-import { Settings } from "lucide-react"
+import { Basketball, CaretDown, Chalkboard, ChalkboardTeacher, CreditCard, EnvelopeOpen, Globe, GraduationCap, Keyboard, Megaphone, PhoneCall, Scroll, Sparkle, Star, Student, User, UsersThree } from "@phosphor-icons/react/dist/ssr"
+import { Backpack, icons, Settings } from "lucide-react"
 import { useMotionValueEvent, useScroll } from "framer-motion"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 const navigationLinks = [
     {
+        icon: ChalkboardTeacher,
         title: "Profil Sekolah",
         links: [
             {
-                icon: EnvelopeOpen,
                 title: "Sambutan Kepala Sekolah",
                 href: "/sambutan",
             },
             {
-                icon: Scroll,
                 title: "Visi & Misi",
                 href: "/visi-misi",
             },
             {
-                icon: GraduationCap,
                 title: "Kurikulum",
                 href: "/kurikulum",
             },
             {
-                icon: UsersThree,
                 title: "Guru",
                 href: "/guru",
             },
             {
-                icon: Chalkboard,
                 title: "Fasilitas sekolah",
                 href: "/fasilitas",
             },
             {
-                icon: PhoneCall,
                 title: "Kontak",
                 href: "/kontak",
             }
         ]
     },
     {
+        icon: Student,
         title: "Siswa & Kegiatan",
         links: [
             {
-                icon: Star,
                 title: "OSIS",
                 href: "/osis",
             },
             {
-                icon: Basketball,
                 title: "Ekstrakurikuler",
                 href: "/ekstrakurikuler",
             },
             {
-                icon: Sparkle,
                 title: "Program Sekolah",
                 href: "/program",
             },
         ]
     },
     {
+        icon: Backpack,
         title: "PPDB",
         links: [
             {
-                icon: Megaphone,
                 title: "Informasi PPDB",
                 href: "/ppdb",
             },
             {
-                icon: Globe,
+                // Icon is not present for this link
                 title: "Daftar PPDB",
-                href: "/https://psbyss.aimsis.com/",
+                href: "https://psbyss.aimsis.com/",
             },
         ]
     },
@@ -124,34 +117,43 @@ const Navbar = ({ landing = false }: INavbarProps) => {
     useMotionValueEvent(scrollY, "change", (latest) => {
         setScrolled(latest > 0)
     })
-    const scrolledStyle = scrolled && "text-foreground bg-background/90 backdrop-blur-sm z-20 px-12"
-    const landingStyle = cn(landing && "text-white", scrolledStyle)
+    const scrolledStyle = scrolled && "text-foreground bg-background/90 backdrop-blur-sm z-20 shadow-xl"
+    const landingStyle = cn(landing && "text-white z-20", scrolledStyle)
+
     return (
-        <header className={cn("sticky top-0 w-full flex flex-row justify-between items-center h-28 p-6 transition-all", landingStyle)}>
+        <header className={cn("fixed top-0 w-full flex flex-row justify-between items-center h-28 px-16 py-8 transition-all", landingStyle)}>
             <Navlogo />
             <NavigationList />
+            <Button variant={'default'} size={'lg'} className = "ml-4 bg-indigo-500 hover:bg-indigo-600">Dashboard</Button>
         </header>
     )
 }
 const NavigationList = () => {
-    return <div className="flex flex-row gap-2 max-md:hidden">
-        {navigationLinks.map(e => (
-            <NavigationItems item={e} />
-        ))}
-    </div>
+    return (
+        <div className="flex flex-row gap-2 max-md:hidden ml-auto">
+            {navigationLinks.map((e, index) => (
+                <NavigationItems key={index} item={e} />
+            ))}
+        </div>
+    )
 }
 
 export function NavigationItems({ item }: any) {
     return (
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex flex-row gap-2 items-center justify-center outline-none uppercase text-base tracking-wider font-medium">{item.title}<CaretDown /></Button>
+                <button className="flex flex-row gap-2 px-2 items-center justify-center outline-none font-semibold">
+                    {item.icon && <item.icon size={28}/>}
+                    {item.title}
+                    <CaretDown className="mx-2" />    
+                </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-98 rounded-2xl p-2 bg-background/80 backdrop-blur-sm">
+            <DropdownMenuContent className="w-98 rounded-2xl bg-background/70 backdrop-blur-sm p-2 mt-4">
                 <DropdownMenuGroup>
-                    {item.links.map((e: any) => (
-                        <DropdownMenuItem className="font-semibold px-3 py-3 rounded-2xl gap-2 group hover:bg-transparent">
-                            <e.icon size={48} className="w-10 h-10 p-[0.3rem] bg-background/40 border border-border rounded-lg " />
+                    {item.links.map((e: any, index: number) => (
+                        <DropdownMenuItem key={index} className="font-medium py-3 px-4 rounded-xl gap-2 group hover:bg-zinc-900 hover:text-slate-100 text-base">
+                            {/* Only show the icon if it exists */}
+                            {e.icon && <e.icon size={48} className="w-10 h-10 p-[0.3rem] bg-background/40 border border-border rounded-lg" />}
                             <span>{e.title}</span>
                         </DropdownMenuItem>
                     ))}
@@ -162,4 +164,3 @@ export function NavigationItems({ item }: any) {
 }
 
 export default Navbar
-

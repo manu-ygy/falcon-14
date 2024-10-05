@@ -105,19 +105,22 @@ function TerbaikCarousel() {
 
 const TerbaikSection = () => {
     return (
-        <div className="min-h-svh bg-white rounded-[3.5rem] p-8 mx-auto flex flex-col items-center justify-center gap-8">
+        <section className="min-h-svh bg-white rounded-[3.5rem] p-8 mx-auto flex flex-col items-center justify-center gap-8">
             {/* <h2 className="text-5xl font-black text-center"><span className="bg-blue-300 px-2">T</span><span className="bg-orange-300 px-2">E</span><span className="bg-yellow-300 px-2">R</span><span className="bg-green-300 px-2">B</span><span className="bg-purple-300 px-2">A</span><span className="bg-red-300 px-2">I</span><span className="bg-teal-300 px-2">K</span></h2> */}
             {/* <span className="text-5xl font-black bg-black text-white w-max p-4 text-center mx-auto">@smayossuka</span> */}
-            <div className='flex flex-col gap-8 md:bg-neutral-200 md:border rounded-[3.5rem] w-full h-full justify-center items-center md:py-16 py-8'>
-                <div className='flex flex-col'>
-                    <span className="text-2xl font-bold text-center mx-auto">Keunggulan YOSUKA untuk menjadi</span>
-                    <span className="text-6xl font-black text-center mx-auto tracking-widest">TERBAIK</span>
+            <div className='flex flex-col gap-8 md:border rounded-[3.5rem] w-full h-full justify-center items-center md:py-16 py-8 border border-slate-300'>
+                <div className='flex flex-col gap-2 items-center text-center'>
+                    <span className="text-2xl font-bold mx-auto uppercase text-zinc-700">Kami percaya, kami</span>
+                    <div className='bg-primary-gradient bg-clip-text w-1/2'>
+                        <h2 className="text-7xl font-black mx-auto thumbnail mb-4 text-transparent">TERBAIK</h2>
+                    </div>
+                    <span className="text-lg lg:w-1/2 opacity-75">Bet brainrot rizz sus. Skibidi sigma noob npc vibe. Ratio mid bet lit no cap. Savage touch grass on god sigma mood. Brainrot snack fire slaps periodt.</span>
                 </div>
-                <div className='max-w-screen-lg w-full flex flex-col gap-4 border border-border rounded-[3rem] p-4 bg-white'>
+                <div className='max-w-screen-lg w-full flex flex-col gap-4 rounded-2xl p-4 bg-slate-200/70'>
                     <TerbaikCarousel />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

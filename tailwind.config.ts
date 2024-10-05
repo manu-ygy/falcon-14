@@ -49,7 +49,20 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			colors: {
+				indigo: {
+				  	100: '#e0e7ff',
+				  	200: '#b6c1ff',
+				 	300: '#8c9eff',
+				  	400: '#6b7aff',
+				  	500: '#4a56ff',
+				  	600: '#3e47cc',
+				  	700: '#3138a9',
+				  	800: '#252a85',
+				  	900: '#191b61'
+				}
+			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -77,9 +90,12 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+		backgroundImage: {
+			'primary-gradient': 'linear-gradient(0deg, #aa00ffbf 0%, #6f00ffbf 44%, #5b21fdbf 70%, #2600ffbf 100%)',
+		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@designbycode/tailwindcss-mask-image")],
 };
 export default config;

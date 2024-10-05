@@ -54,7 +54,7 @@ const SocialSection = () => {
         <div className="bg-white rounded-[3.5rem] py-12 mx-auto flex flex-col gap-16 items-center justify-center">
             <h2 className="text-5xl font-black text-center">Tetap terhubung dengan kami</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-8'>
-                {socialLinks.map((e) => <SocialItem item={e} />)}
+                {socialLinks.map((e) => <SocialItem item={e} key={e} />)}
             </div>
             
             {/* <div className="grid grid-cols-4 gap-4 w-full">
