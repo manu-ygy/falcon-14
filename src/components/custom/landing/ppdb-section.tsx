@@ -1,5 +1,5 @@
-import { Button } from "../../ui/button";
-import Image from "next/image";
+import { Button } from '../../ui/button';
+import Image from 'next/image';
 
 const PPDBSection = () => {
     return (
@@ -20,7 +20,7 @@ const PPDBSection = () => {
                 <Button className = "lg:w-fit">Kontak (Bu Jeje)</Button>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default PPDBSection;

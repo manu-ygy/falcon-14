@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const GuruPage = () => {
-  return (
-    <div className="">
+    return (
+        <div className="">
       GuruPage
-    </div>
-  );
+        </div>
+    );
 };
 
 export default GuruPage;

@@ -1,49 +1,49 @@
-import { Button } from '@/src/components/ui/button'
-import { cn } from '@/src/lib/utils'
-import { FacebookLogo, InstagramLogo, TiktokLogo, YoutubeLogo } from '@phosphor-icons/react/dist/ssr'
-import Image from 'next/image'
-import React from 'react'
+import { Button } from '@/src/components/ui/button';
+import { cn } from '@/src/lib/utils';
+import { FacebookLogo, InstagramLogo, TiktokLogo, YoutubeLogo } from '@phosphor-icons/react/dist/ssr';
+import Image from 'next/image';
+import React from 'react';
 
 const socialLinks = [
     {
-        title: "Yosuka Production",
-        description: "Yosuka Production merupakan wadah kreativitas seluruh Siswa-siswi, Guru dan Karyawan SMA Yos Sudarso Karawang.",
-        platform: "YouTube",
+        title: 'Yosuka Production',
+        description: 'Yosuka Production merupakan wadah kreativitas seluruh Siswa-siswi, Guru dan Karyawan SMA Yos Sudarso Karawang.',
+        platform: 'YouTube',
         platformIcon: YoutubeLogo,
-        platformIconStyle: "text-red-600",
-        action: "Subscribe"
+        platformIconStyle: 'text-red-600',
+        action: 'Subscribe'
     },
     {
-        title: "@smayossuka",
-        description: "Akun resmi SMA Yos Sudarso Karawang",
-        platform: "Instagram",
+        title: '@smayossuka',
+        description: 'Akun resmi SMA Yos Sudarso Karawang',
+        platform: 'Instagram',
         platformIcon: InstagramLogo,
-        platformIconStyle: "text-pink-600",
-        action: "Follow"
+        platformIconStyle: 'text-pink-600',
+        action: 'Follow'
     },
     {
-        title: "@osissmayosuka",
-        description: "Akun resmi SMA Yos Sudarso Karawang",
-        platform: "TikTok",
+        title: '@osissmayosuka',
+        description: 'Akun resmi SMA Yos Sudarso Karawang',
+        platform: 'TikTok',
         platformIcon: TiktokLogo,
-        platformIconStyle: "text-foregrounds",
-        action: "Follow"
+        platformIconStyle: 'text-foregrounds',
+        action: 'Follow'
     },
     {
-        title: "SMA Yos Sudarso Karawang",
-        description: "Akun facebook yang akan memberikan berita, agenda acara dan foto-foto terbaru dari kegiatan SMA YOSUKA.",
-        platform: "Facebook",
+        title: 'SMA Yos Sudarso Karawang',
+        description: 'Akun facebook yang akan memberikan berita, agenda acara dan foto-foto terbaru dari kegiatan SMA YOSUKA.',
+        platform: 'Facebook',
         platformIcon: FacebookLogo,
-        platformIconStyle: "text-blue-600",
-        action: "Follow"
+        platformIconStyle: 'text-blue-600',
+        action: 'Follow'
     },
-]
+];
 const SocialItem = ({ item }: any) => {
     return <div className="w-full border border-slate-300/70 p-6 gap-4 flex flex-row items-center justify-center rounded-2xl">
-        <item.platformIcon className={cn("", item.platformIconStyle)} size={32} weight="fill"/>
+        <item.platformIcon className={cn('', item.platformIconStyle)} size={32} weight="fill"/>
         <h2 className="text-xl font-semibold">{item.title}</h2>
-    </div>
-}
+    </div>;
+};
 const SocialSection = () => {
     return (
         <div className = "w-full h-auto relative flex flex-col items-center max-md:p-8">
@@ -57,7 +57,7 @@ const SocialSection = () => {
             </div>
 
         </div>
-    )
-}
+    );
+};
 
-export default SocialSection
+export default SocialSection;

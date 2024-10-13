@@ -1,63 +1,60 @@
-"use client"
-import { Card, CardContent } from '@/src/components/ui/card'
-import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/src/components/ui/carousel'
-import { cn } from '@/src/lib/utils'
-import { GearFine, HandsPraying, Lego, LightbulbFilament, Rocket, Smiley, Translate } from '@phosphor-icons/react/dist/ssr'
-import React from 'react'
+'use client';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/src/components/ui/carousel';
+import React from 'react';
 
 const articles = [{
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 },
 {
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 },
 {
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 },
 {
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 },
 {
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 },
 {
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 },
 {
-    title: "Hello World",
-    description: "lorem ipsum",
-    image_url: "",
+    title: 'Hello World',
+    description: 'lorem ipsum',
+    image_url: '',
 }
-]
+];
 function ArticleCarousel() {
-    const [api, setApi] = React.useState<CarouselApi>()
-    const [current, setCurrent] = React.useState(0)
-    const [count, setCount] = React.useState(0)
+    const [api, setApi] = React.useState<CarouselApi>();
+    const [current, setCurrent] = React.useState(0);
+    const [count, setCount] = React.useState(0);
 
     React.useEffect(() => {
         if (!api) {
-            return
+            return;
         }
 
-        setCount(api.scrollSnapList().length)
-        setCurrent(api.selectedScrollSnap() + 1)
+        setCount(api.scrollSnapList().length);
+        setCurrent(api.selectedScrollSnap() + 1);
 
-        api.on("select", () => {
-            setCurrent(api.selectedScrollSnap() + 1)
-        })
-    }, [api])
+        api.on('select', () => {
+            setCurrent(api.selectedScrollSnap() + 1);
+        });
+    }, [api]);
 
     return (
         <div className="mx-auto w-full">
@@ -79,7 +76,7 @@ function ArticleCarousel() {
                 <CarouselNext className='disabled:opacity-0 transition-all right-0 rounded-r-none' />
             </Carousel>
         </div >
-    )
+    );
 }
 
 
@@ -88,7 +85,7 @@ const ArticleSection = () => {
         <div className='flex flex-col gap-8 w-full h-full justify-center items-center'>
             <ArticleCarousel />
         </div>
-    )
-}
+    );
+};
 
-export default ArticleSection
+export default ArticleSection;

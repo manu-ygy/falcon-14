@@ -1,7 +1,7 @@
-import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
-import Image from 'next/image'
-import React from 'react'
-import { Button } from '../ui/button'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
+import Image from 'next/image';
+import React from 'react';
+import { Button } from '../ui/button';
 
 const Hero = () => {
     return (
@@ -23,7 +23,7 @@ const Hero = () => {
                 <p className='text-lg max-w-2xl mb-6 opacity-70'>
                 SMA Yosuka berkomitmen untuk membentuk Insan Pembelajar yang Cerdas dan Berbudi Pekerti melalui pendidikan visioner, berlandaskan nilai-nilai Kristiani dan kemanusiaan universal. Kami percaya pada pengembangan pribadi yang utuh, yang tidak hanya cerdas secara akademis, tetapi juga berkomitmen menjaga martabat setiap manusia.
                 </p>
-                <Button variant={"default"} className='text-lg md:w-max gap-2'>
+                <Button variant={'default'} className='text-lg md:w-max gap-2'>
                     Lanjut <ArrowRight weight='bold' />
                 </Button>
             </div>
@@ -33,7 +33,7 @@ const Hero = () => {
                 <Image src="/images/hero.png" alt="Siswa" className="w-full h-full object-contain object-bottom lg:translate-y-1/4 scale-150" width={500} height={500} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;

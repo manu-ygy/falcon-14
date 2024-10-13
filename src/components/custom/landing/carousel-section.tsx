@@ -1,6 +1,6 @@
-import React from 'react'
-import FeedCarousel from '../feed-carousel'
-import ArticleSection from './articles-section'
+import React from 'react';
+import FeedCarousel from '../feed-carousel';
+import ArticleSection from './articles-section';
 
 const CarouselSection = () => {
     return (
@@ -11,7 +11,7 @@ const CarouselSection = () => {
             </div>
             <ArticleSection />
         </div>
-    )
-}
+    );
+};
 
-export default CarouselSection
+export default CarouselSection;

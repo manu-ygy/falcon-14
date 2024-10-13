@@ -1,72 +1,71 @@
-"use client"
-import { Card, CardContent } from '@/src/components/ui/card'
-import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/src/components/ui/carousel'
-import { cn } from '@/src/lib/utils'
-import { GearFine, HandsPraying, Lego, LightbulbFilament, Rocket, Smiley, Translate } from '@phosphor-icons/react/dist/ssr'
-import React from 'react'
+'use client';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/src/components/ui/carousel';
+import { cn } from '@/src/lib/utils';
+import { GearFine, HandsPraying, Lego, LightbulbFilament, Rocket, Smiley, Translate } from '@phosphor-icons/react/dist/ssr';
+import React from 'react';
 const cards = [
     {
-        title: "Terampil",
-        description: "Kami mengembangkan berbagai kegiatan intrakurikuler, kokurikuler dan ekstrakurikuler untuk melatih keterampilan siswa sehingga mereka memiliki kemampuan untuk bertindak dengan cekatan, gesit, lincah dan sistematis.",
+        title: 'Terampil',
+        description: 'Kami mengembangkan berbagai kegiatan intrakurikuler, kokurikuler dan ekstrakurikuler untuk melatih keterampilan siswa sehingga mereka memiliki kemampuan untuk bertindak dengan cekatan, gesit, lincah dan sistematis.',
         icon: GearFine,
-        bgStyle: "bg-gradient-to-br from-blue-900 to-blue-950/70"
+        bgStyle: 'bg-gradient-to-br from-blue-900 to-blue-950/70'
     },
     {
-        title: "Edutaiment",
-        description: "Kami menyelenggarakan pembelajaran berkualitas dan menyenangkan dengan memadukan muatan pendidikan (edukasi) dan hiburan (entertaiment) secara harmonis.",
+        title: 'Edutaiment',
+        description: 'Kami menyelenggarakan pembelajaran berkualitas dan menyenangkan dengan memadukan muatan pendidikan (edukasi) dan hiburan (entertaiment) secara harmonis.',
         icon: Lego,
-        bgStyle: "bg-gradient-to-br from-yellow-900 to-yellow-950/70"
+        bgStyle: 'bg-gradient-to-br from-yellow-900 to-yellow-950/70'
     },
     {
-        title: "Religius",
-        description: "Kami menyelenggarakan pembelajaran berkualitas dan menyenangkan dengan memadukan muatan pendidikan (edukasi) dan hiburan (entertaiment) secara harmonis.",
+        title: 'Religius',
+        description: 'Kami menyelenggarakan pembelajaran berkualitas dan menyenangkan dengan memadukan muatan pendidikan (edukasi) dan hiburan (entertaiment) secara harmonis.',
         icon: HandsPraying,
-        bgStyle: "bg-gradient-to-br from-red-900 to-red-950/70"
+        bgStyle: 'bg-gradient-to-br from-red-900 to-red-950/70'
     },
     {
-        title: "Bahasa Asing",
-        description: "Kami memberikan pengalaman belajar kepada siswa untuk meningkatkan penguasaan bahasa asing selain bahasa inggris dengan harapan lulusan SMA Yos Sudarso dapat bersaing di kancah global.",
+        title: 'Bahasa Asing',
+        description: 'Kami memberikan pengalaman belajar kepada siswa untuk meningkatkan penguasaan bahasa asing selain bahasa inggris dengan harapan lulusan SMA Yos Sudarso dapat bersaing di kancah global.',
         icon: Translate,
-        bgStyle: "bg-gradient-to-br from-blue-900 to-blue-950/70"
+        bgStyle: 'bg-gradient-to-br from-blue-900 to-blue-950/70'
     },
     {
-        title: "Aktif & Kreatif",
-        description: "Kami mendorong siswa/i untuk terlibat dalam berbagai kegiatan yang mengembangkan kemampuan siswa-siswi dalam menciptakan ide atau gagasan baru, unik dan berbeda yang bermanfaat bagi masa depan.",
+        title: 'Aktif & Kreatif',
+        description: 'Kami mendorong siswa/i untuk terlibat dalam berbagai kegiatan yang mengembangkan kemampuan siswa-siswi dalam menciptakan ide atau gagasan baru, unik dan berbeda yang bermanfaat bagi masa depan.',
         icon: LightbulbFilament,
-        bgStyle: "bg-gradient-to-br from-yellow-900 to-yellow-950/70"
+        bgStyle: 'bg-gradient-to-br from-yellow-900 to-yellow-950/70'
     },
     {
-        title: "Inovatif",
-        description: "Kami memberikan ruang belajar yang luas untuk memperkuat kemampuan siswa-siswi dalam mewujudkan ide atau gagasan pembaharuan yang lebih baik dan bermanfaat bagi masa depan.",
+        title: 'Inovatif',
+        description: 'Kami memberikan ruang belajar yang luas untuk memperkuat kemampuan siswa-siswi dalam mewujudkan ide atau gagasan pembaharuan yang lebih baik dan bermanfaat bagi masa depan.',
         icon: Rocket,
-        bgStyle: "bg-gradient-to-br from-red-900 to-red-950/70"
+        bgStyle: 'bg-gradient-to-br from-red-900 to-red-950/70'
     },
     {
-        title: "Karakter",
-        description: "Kami tidak hanya membentuk siswa-siswi untuk memiliki kemampuan dalam bidang akademik saja, melainkan tetap mengutamakan agar siswa-siswi memiliki karakter yang baik meliputi: empati, adaptif, disiplin, jujur, tanggungjawab, mandiri dan berjiwa kepemimpinan.",
+        title: 'Karakter',
+        description: 'Kami tidak hanya membentuk siswa-siswi untuk memiliki kemampuan dalam bidang akademik saja, melainkan tetap mengutamakan agar siswa-siswi memiliki karakter yang baik meliputi: empati, adaptif, disiplin, jujur, tanggungjawab, mandiri dan berjiwa kepemimpinan.',
         icon: Smiley,
-        bgStyle: "bg-gradient-to-br from-blue-900 to-blue-950/70"
+        bgStyle: 'bg-gradient-to-br from-blue-900 to-blue-950/70'
     },
-]
+];
 
 
 function TerbaikCarousel() {
-    const [api, setApi] = React.useState<CarouselApi>()
-    const [current, setCurrent] = React.useState(0)
-    const [count, setCount] = React.useState(0)
+    const [api, setApi] = React.useState<CarouselApi>();
+    const [current, setCurrent] = React.useState(0);
+    const [count, setCount] = React.useState(0);
 
     React.useEffect(() => {
         if (!api) {
-            return
+            return;
         }
 
-        setCount(api.scrollSnapList().length)
-        setCurrent(api.selectedScrollSnap() + 1)
+        setCount(api.scrollSnapList().length);
+        setCurrent(api.selectedScrollSnap() + 1);
 
-        api.on("select", () => {
-            setCurrent(api.selectedScrollSnap() + 1)
-        })
-    }, [api])
+        api.on('select', () => {
+            setCurrent(api.selectedScrollSnap() + 1);
+        });
+    }, [api]);
 
     return (
         <div className="mx-auto w-full">
@@ -80,7 +79,7 @@ function TerbaikCarousel() {
                                 </div>
                                 <p className="z-10 text-center text-2xl font-bold mt-2 text-white">{e.title}</p>
                                 <p className="z-10 text-base py-6 px-8 text-white">{e.description}</p>
-                                <div className={cn("rounded-2xl bg-black absolute top-8 bottom-0 left-0 right-0", e.bgStyle)}>
+                                <div className={cn('rounded-2xl bg-black absolute top-8 bottom-0 left-0 right-0', e.bgStyle)}>
                                 </div>
                             </div>
                         </CarouselItem>
@@ -99,7 +98,7 @@ function TerbaikCarousel() {
                 <CarouselNext className='disabled:opacity-0 transition-all -right-24 max-lg:-right-6' />
             </Carousel>
         </div>
-    )
+    );
 }
 
 
@@ -121,7 +120,7 @@ const TerbaikSection = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default TerbaikSection
+export default TerbaikSection;

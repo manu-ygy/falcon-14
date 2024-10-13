@@ -1,5 +1,5 @@
-import { LoginForm } from "./form"
-import { Suspense } from "react"
+import { LoginForm } from './form';
+import { Suspense } from 'react';
 
 export default function Login() {
     return (
@@ -24,5 +24,5 @@ export default function Login() {
 
             </div>
         </div>
-    )
+    );
 }

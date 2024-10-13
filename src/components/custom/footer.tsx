@@ -1,8 +1,8 @@
-import React from 'react'
-import Icons from './icons'
-import { InstagramLogo, TiktokLogo } from '@phosphor-icons/react/dist/ssr'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from 'react';
+import Icons from './icons';
+import { InstagramLogo, TiktokLogo } from '@phosphor-icons/react/dist/ssr';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -44,7 +44,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

@@ -1,14 +1,14 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-    darkMode: ["class"],
+    darkMode: ['class'],
     content: [
     // "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     // "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     // "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-	"./src/**/*.{js,jsx,ts,tsx,mdx}"
-],
-  theme: {
+        './src/**/*.{js,jsx,ts,tsx,mdx}'
+    ],
+    theme: {
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
@@ -51,8 +51,8 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			colors: {
-				indigo: {
+                colors: {
+                    indigo: {
 				  	100: '#e0e7ff',
 				  	200: '#b6c1ff',
 				 	300: '#8c9eff',
@@ -62,8 +62,8 @@ const config: Config = {
 				  	700: '#3138a9',
 				  	800: '#252a85',
 				  	900: '#191b61'
-				}
-			}
+                    }
+                }
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -92,11 +92,11 @@ const config: Config = {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
-		backgroundImage: {
-			'primary-gradient': 'linear-gradient(90deg, #aa00ffbf 0%, #6f00ffbf 44%, #5b21fdbf 70%, #2600ffbf 100%)',
-		},
+            backgroundImage: {
+                'primary-gradient': 'linear-gradient(90deg, #aa00ffbf 0%, #6f00ffbf 44%, #5b21fdbf 70%, #2600ffbf 100%)',
+            },
   	}
-  },
-  plugins: [require("tailwindcss-animate"), require("@designbycode/tailwindcss-mask-image")],
+    },
+    plugins: [require('tailwindcss-animate'), require('@designbycode/tailwindcss-mask-image')],
 };
 export default config;

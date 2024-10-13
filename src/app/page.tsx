@@ -1,73 +1,73 @@
-import FeedCarousel from "@/src/components/custom/feed-carousel";
-import Footer from "@/src/components/custom/footer";
-import GrandNavigation from "@/src/components/custom/landing/grand-nav";
-import Hero from "@/src/components/custom/hero";
-import SocialSection from "@/src/components/custom/landing/social-section";
-import TerbaikSection from "@/src/components/custom/landing/terbaik-section";
-import CarouselSection from "@/src/components/custom/landing/carousel-section";
-import PPDBSection from "../components/custom/landing/ppdb-section";
-import Navbar from "@/src/components/custom/navbar";
-import Image from "next/image";
+import FeedCarousel from '@/src/components/custom/feed-carousel';
+import Footer from '@/src/components/custom/footer';
+import GrandNavigation from '@/src/components/custom/landing/grand-nav';
+import Hero from '@/src/components/custom/hero';
+import SocialSection from '@/src/components/custom/landing/social-section';
+import TerbaikSection from '@/src/components/custom/landing/terbaik-section';
+import CarouselSection from '@/src/components/custom/landing/carousel-section';
+import PPDBSection from '../components/custom/landing/ppdb-section';
+import Navbar from '@/src/components/custom/navbar';
+import Image from 'next/image';
 
 export default function Home() {
-  return (
-    <main className="-mt-28 lg:mt-0">
-      <Navbar landing={true} />
-      <Hero />
+    return (
+        <main className="-mt-28 lg:mt-0">
+            <Navbar landing={true} />
+            <Hero />
 
-      <section className="rounded-[3.5rem] mx-auto flex flex-col py-16">
-          <div className="rounded-[3.5rem] lg:p-16 max-md:p-8 flex flex-col gap-8">
-              <h1></h1>
-              <h2 className="text-5xl font-black text-center mx-auto uppercase">Developing Future Innovators</h2>
-              <h2 className="text-xl font-normal max-w-screen-lg mx-auto text-center opacity-75">
+            <section className="rounded-[3.5rem] mx-auto flex flex-col py-16">
+                <div className="rounded-[3.5rem] lg:p-16 max-md:p-8 flex flex-col gap-8">
+                    <h1></h1>
+                    <h2 className="text-5xl font-black text-center mx-auto uppercase">Developing Future Innovators</h2>
+                    <h2 className="text-xl font-normal max-w-screen-lg mx-auto text-center opacity-75">
                   Kami berkomitmen membentuk pribadi pembelajar yang cerdas dan berbudi pekerti luhur melalui pendidikan visioner yang berlandaskan nilai-nilai Kristiani dan kemanusiaan universal. Kami percaya dalam mengembangkan individu secara menyeluruh, bukan hanya cerdas secara akademis, tetapi juga berkomitmen untuk memperjuangkan dan menjaga martabat setiap manusia.</h2>
           
-              <div className = "flex flex-row max-md:flex-col gap-4 w-full text-lg">
-                <div className="p-12 border border-slate-300/70 rounded-3xl w-full flex flex-col gap-4">
-                  <h3 className="text-3xl font-black uppercase">Visi</h3>
-                  <span className="opacity-75">Insan Pembelajar Yang Cerdas & Berbudi Pekerti. </span>
+                    <div className = "flex flex-row max-md:flex-col gap-4 w-full text-lg">
+                        <div className="p-12 border border-slate-300/70 rounded-3xl w-full flex flex-col gap-4">
+                            <h3 className="text-3xl font-black uppercase">Visi</h3>
+                            <span className="opacity-75">Insan Pembelajar Yang Cerdas & Berbudi Pekerti. </span>
+                        </div>
+
+                        <div className="p-12 border border-slate-300/70 rounded-3xl w-full flex flex-col gap-4">
+                            <h3 className="text-3xl font-black uppercase">Misi</h3>
+                            <ul className="opacity-75">
+                                <li>1. Mengembangkan pendidikan yang visioner berdasarkan nilai-nilai kristiani dan nilai kemanusiaan universal</li>
+                                <li>2. Mengembangkan pribadi utuh yang memperjuangkan dan mengembangkan martabat manusia.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div className="p-12 border border-slate-300/70 rounded-3xl w-full flex flex-col gap-4">
-                  <h3 className="text-3xl font-black uppercase">Misi</h3>
-                  <ul className="opacity-75">
-                    <li>1. Mengembangkan pendidikan yang visioner berdasarkan nilai-nilai kristiani dan nilai kemanusiaan universal</li>
-                    <li>2. Mengembangkan pribadi utuh yang memperjuangkan dan mengembangkan martabat manusia.</li>
-                  </ul>
-                </div>
-              </div>
-          </div>
-      </section>
+            <TerbaikSection />
 
-      <TerbaikSection />
+            <PPDBSection/>
 
-      <PPDBSection/>
-
-      {/*
+            {/*
         <CarouselSection />
       */}
-      <SocialSection />
-      {/*
+            <SocialSection />
+            {/*
       <GrandNavigation />
       */}
-      <Footer />
-    </main >
-  );
+            <Footer />
+        </main >
+    );
 }
 
 const HeadMasters = () => {
-  return (
-    <section className = "relative flex flex-col lg:flex-row h-fit">
-      <img src="/images/guru/suhenda.png" width={312} height={312} alt = "Suhenda, S.Pd"/>
+    return (
+        <section className = "relative flex flex-col lg:flex-row h-fit">
+            <img src="/images/guru/suhenda.png" width={312} height={312} alt = "Suhenda, S.Pd"/>
 
-      <div className = "flex flex-col text-slate-500">
-        <h2 className="text-3xl text-start py-">Membangun Pribadi Berintegritas</h2>
-        <p className="text-lg leading-relaxed">Kami membekali siswa dengan keterampilan, kreativitas, dan karakter unggul. Di SMA Yosuka, siswa dididik untuk terampil, menikmati pembelajaran edutaiment, menjunjung nilai religius, menguasai bahasa asing, serta aktif dan inovatif dalam menghadapi tantangan global.</p>
-      </div>
-    </section>
-  );
+            <div className = "flex flex-col text-slate-500">
+                <h2 className="text-3xl text-start py-">Membangun Pribadi Berintegritas</h2>
+                <p className="text-lg leading-relaxed">Kami membekali siswa dengan keterampilan, kreativitas, dan karakter unggul. Di SMA Yosuka, siswa dididik untuk terampil, menikmati pembelajaran edutaiment, menjunjung nilai religius, menguasai bahasa asing, serta aktif dan inovatif dalam menghadapi tantangan global.</p>
+            </div>
+        </section>
+    );
 
-      {/*
+    {/*
     <div className="bg-blue-950 py-16 p-8 mx-auto flex flex-row items-center justify-center relative">
       <div className="flex flex-col md:flex-row max-w-screen-xl items-center justify-center gap-16">
         <div className="flex flex-col items-center justify-center z-10 rounded-2xl overflow-clip">
@@ -87,4 +87,4 @@ const HeadMasters = () => {
       </div>
     </div>
     */}
-}
+};

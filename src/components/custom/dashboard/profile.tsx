@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar";
-import { useSession } from "next-auth/react";
-import { Door, User } from "@phosphor-icons/react/dist/ssr";
+import { Avatar, AvatarFallback, AvatarImage } from '@/src/components/ui/avatar';
+import { useSession } from 'next-auth/react';
+import { Door, User } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/src/components/ui/button';
 
 const Profile = () => {
     const { data } = useSession({
         required: true
-    })
+    });
 
-    const user = data?.user
+    const user = data?.user;
 
     return (
         <div className = "w-full flex border py-6 px-8 gap-6 items-center rounded-2xl">
@@ -46,7 +46,7 @@ const Profile = () => {
                 </>
             )}
         </div>
-    )
-}
+    );
+};
 
 export default Profile;

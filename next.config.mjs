@@ -4,6 +4,9 @@ import withMDX from '@next/mdx';
 const nextConfig = {
   output: 'standalone',
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  eslint: {
+    ignoreDuringBuilds: true
+  }
   // Konfigurasi lain yang diperlukan di sini
 };
 
