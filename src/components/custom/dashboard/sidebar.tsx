@@ -14,13 +14,13 @@ interface Sublink {
 
 interface LinkItem {
   title: string;
-  icon: string; // Ubah tipe ke string untuk nama ikon
+  icon: string; // Nama ikon
   href: string;
-  sublinks?: Sublink[];
+  sublinks?: Sublink[]; // Sublink opsional
 }
 
 interface DashboardSidebarProps {
-  items: LinkItem[]; // items harus array
+  items: LinkItem[]; // Array dari LinkItem
 }
 
 // Fungsi untuk memuat ikon secara dinamis
@@ -80,12 +80,13 @@ const DashboardItem: React.FC<{ item: LinkItem }> = ({ item }) => {
                 )}
             >
                 <div className="bg-white text-zinc-800 rounded-2xl p-2">
+                    {/* Pastikan untuk menggunakan IconComponent jika sudah terdefinisi */}
                     <IconComponent className="rounded-sm text-indigo-500" size={24} weight="fill" />
                 </div>
                 <span className="max-md:text-sm font-medium text-base">{item.title}</span>
             </Link>
 
-            {/* Render sublinks if they exist */}
+            {/* Render sublinks jika ada */}
             {item.sublinks && item.sublinks.length > 0 && (
                 <div className="ml-8 mt-2 space-y-1">
                     {item.sublinks.map((sublink) => (
