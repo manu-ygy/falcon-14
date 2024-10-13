@@ -156,7 +156,7 @@ const DashboardFeeds = () => {
                 </div>
             </CardHeader>
             <CardContent className="space-y-4 p-4 flex gap-4">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PM6-RdLRAN0?si=9l_OOvgZw4EINjj2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className = "rounded-2xl"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PM6-RdLRAN0?si=9l_OOvgZw4EINjj2" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" className = "rounded-2xl"></iframe>
             </CardContent>
         </Card>
     );
