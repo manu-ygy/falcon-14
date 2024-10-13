@@ -3,10 +3,11 @@ import type { Config } from "tailwindcss";
 const config: Config = {
     darkMode: ["class"],
     content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+    // "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+	"./src/**/*.{js,jsx,ts,tsx,mdx}"
+],
   theme: {
   	extend: {
   		colors: {
@@ -92,7 +93,7 @@ const config: Config = {
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
 		backgroundImage: {
-			'primary-gradient': 'linear-gradient(0deg, #aa00ffbf 0%, #6f00ffbf 44%, #5b21fdbf 70%, #2600ffbf 100%)',
+			'primary-gradient': 'linear-gradient(90deg, #aa00ffbf 0%, #6f00ffbf 44%, #5b21fdbf 70%, #2600ffbf 100%)',
 		},
   	}
   },

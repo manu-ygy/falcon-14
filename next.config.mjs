@@ -1,6 +1,12 @@
+import withMDX from '@next/mdx';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone'
+  output: 'standalone',
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  // Konfigurasi lain yang diperlukan di sini
 };
 
-export default nextConfig;
+export default withMDX({
+  extension: /\.mdx?$/,
+})(nextConfig);
