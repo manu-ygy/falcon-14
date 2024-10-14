@@ -1,6 +1,9 @@
+'use client'
+
 import React from 'react';
 import DashboardSidebar from '@/src/components/custom/dashboard/sidebar';
 import Profile from '@/src/components/custom/dashboard/profile';
+import { House, User, File } from '@phosphor-icons/react/dist/ssr';
 
 // Fungsi DashboardLayout dengan links yang langsung didefinisikan
 export default function DashboardLayout({
@@ -10,17 +13,16 @@ export default function DashboardLayout({
 }) {
     // Definisikan links di sini
     const links = [
-        { title: 'Home', icon: 'House', href: '/dashboard' },
-        { title: 'Inbox', icon: 'Tray', href: '/dashboard/inbox' },
+        { title: 'Home', icon: House, href: '/admin' },
         {
-            title: 'Bahan Ajar',
-            icon: 'Books',
-            href: '/dashboard/materi',
+            title: 'User',
+            icon: User,
             sublinks: [
-                { title: 'Materi 1', href: '/dashboard/materi/1' },
-                { title: 'Materi 2', href: '/dashboard/materi/2' },
+                { title: 'Siswa', href: '/admin/user/student' },
+                { title: 'Guru', href: '/admin/user/teacher' },
             ],
         },
+        { title: 'Konten', icon: File, href: '/admin/content' },
     ];  
 
     return (

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const GuruPage = () => {
+const StudentUser = () => {
     return (
         <div className="">
-      GuruPage
+      Halaman siswa
         </div>
     );
 };
 
-export default GuruPage;
+export default StudentUser;
