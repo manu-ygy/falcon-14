@@ -1,36 +1,35 @@
-import FeedCarousel from '@/src/components/custom/feed-carousel';
-import Footer from '@/src/components/custom/footer';
-import GrandNavigation from '@/src/components/custom/landing/grand-nav';
-import Hero from '@/src/components/custom/hero';
-import SocialSection from '@/src/components/custom/landing/social-section';
-import TerbaikSection from '@/src/components/custom/landing/terbaik-section';
-import CarouselSection from '@/src/components/custom/landing/carousel-section';
+import FeedCarousel from '@/components/custom/feed-carousel';
+import Footer from '@/components/custom/footer';
+import GrandNavigation from '@/components/custom/landing/grand-nav';
+import Hero from '@/components/custom/landing/hero';
+import SocialSection from '@/components/custom/landing/social-section';
+import TerbaikSection from '@/components/custom/landing/terbaik-section';
+import CarouselSection from '@/components/custom/landing/carousel-section';
 import PPDBSection from '../components/custom/landing/ppdb-section';
-import Navbar from '@/src/components/custom/navbar';
+import Navbar from '@/components/custom/navbar';
 import Image from 'next/image';
 
 export default function Home() {
     return (
-        <main className="-mt-28 lg:mt-0">
-            <Navbar landing={true} />
+        <main className="">
             <Hero />
 
             <section className="rounded-[3.5rem] mx-auto flex flex-col py-16">
                 <div className="rounded-[3.5rem] lg:p-16 max-md:p-8 flex flex-col gap-8">
                     <h1></h1>
-                    <h2 className="text-5xl font-black text-center mx-auto uppercase">Developing Future Innovators</h2>
+                    <h2 className="text-5xl font-black text-center mx-auto uppercase text-zinc-800">Airstra</h2>
                     <h2 className="text-xl font-normal max-w-screen-lg mx-auto text-center opacity-75">
                   Kami berkomitmen membentuk pribadi pembelajar yang cerdas dan berbudi pekerti luhur melalui pendidikan visioner yang berlandaskan nilai-nilai Kristiani dan kemanusiaan universal. Kami percaya dalam mengembangkan individu secara menyeluruh, bukan hanya cerdas secara akademis, tetapi juga berkomitmen untuk memperjuangkan dan menjaga martabat setiap manusia.</h2>
           
                     <div className = "flex flex-row max-md:flex-col gap-4 w-full text-lg">
                         <div className="p-12 border border-slate-300/70 rounded-3xl w-full flex flex-col gap-4">
-                            <h3 className="text-3xl font-black uppercase">Visi</h3>
+                            <h3 className="text-3xl font-black uppercase text-zinc-800">Visi</h3>
                             <span className="opacity-75">Insan Pembelajar Yang Cerdas & Berbudi Pekerti. </span>
                         </div>
 
                         <div className="p-12 border border-slate-300/70 rounded-3xl w-full flex flex-col gap-4">
-                            <h3 className="text-3xl font-black uppercase">Misi</h3>
-                            <ul className="opacity-75">
+                            <h3 className="text-3xl font-black uppercase text-zinc-800">Misi</h3>
+                            <ul className="opacity-75 flex flex-col gap-4">
                                 <li>1. Mengembangkan pendidikan yang visioner berdasarkan nilai-nilai kristiani dan nilai kemanusiaan universal</li>
                                 <li>2. Mengembangkan pribadi utuh yang memperjuangkan dan mengembangkan martabat manusia.</li>
                             </ul>
@@ -44,12 +43,10 @@ export default function Home() {
             <PPDBSection/>
 
             {/*
-        <CarouselSection />
-      */}
+            <CarouselSection />
+            */}
             <SocialSection />
-            {/*
-      <GrandNavigation />
-      */}
+            <GrandNavigation />
             <Footer />
         </main >
     );

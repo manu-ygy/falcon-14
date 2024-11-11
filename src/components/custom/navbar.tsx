@@ -3,15 +3,15 @@
 import * as React from 'react';
 import Link from 'next/link';
 
-import { cn } from '@/src/lib/utils';
-import Icons from '@/src/components/custom/icons';
+import { cn } from '@/lib/utils';
+import Icons from '@/components/custom/icons';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from '@/src/components/ui/dropdown-menu';
+} from '@/components/ui/dropdown-menu';
 import { Button } from '../ui/button';
 import {
     CaretDown,
@@ -90,8 +90,8 @@ const Navlogo = () => {
         <Link href="/" className="flex flex-row gap-4 ">
             <Icons />
             <div className="flex flex-col max-md:hidden -gap-1">
-                <span className="text-lg font-bold">SMA Yos Sudarso</span>
-                <span className = "opacity-70 text-sm">Karawang</span>
+                <span className="text-lg font-bold">Airstra</span>
+                <span className = "opacity-70 text-sm">Your Sky, Your Journey</span>
             </div>
         </Link>
     );
@@ -116,18 +116,19 @@ const Navbar = ({ landing = false }: INavbarProps) => {
     });
     const scrolledStyle =
     scrolled &&
-    'text-foreground bg-background/90 backdrop-blur-sm z-20 border-b border-border';
-    const landingStyle = cn(landing && 'text-white px-16 z-20', scrolledStyle);
+    'text-foreground text-sm bg-background/90 backdrop-blur-sm z-20 border-b border-border';
+    const landingStyle = cn(landing && 'text-white px-24 z-20', scrolledStyle);
 
     return (
         <header
             className={cn(
-                'fixed top-0 w-full flex flex-row justify-between border-b border-transparent items-center h-28 px-8 py-8 transition-all',
+                'fixed top-0 w-full flex flex-row justify-between border-b border-transparent items-center h-28 px-8 py-16 transition-all',
                 landingStyle
             )}
         >
             <Navlogo />
             <NavigationList />
+            {/**
             <Link href={'/dashboard'}>
                 <Button
                     variant={'default'}
@@ -135,12 +136,13 @@ const Navbar = ({ landing = false }: INavbarProps) => {
             Dashboard
                 </Button>
             </Link>
+             **/}
         </header>
     );
 };
 const NavigationList = () => {
     return (
-        <div className="flex flex-row gap-2 max-md:hidden ml-auto">
+        <div className="flex-row gap-2 hidden lg:flex ml-auto">
             {navigationLinks.map((e, index) => (
                 <NavigationItems key={index} item={e} />
             ))}
@@ -152,7 +154,7 @@ export function NavigationItems({ item }: any) {
     return (
         <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
-                <button className="flex flex-row gap-2 px-2 items-center justify-center outline-none font-semibold">
+                <button className="flex text-sm flex-row gap-2 px-2 items-center justify-center outline-none font-semibold">
                     {item.icon && <item.icon size={28} />}
                     {item.title}
                     <CaretDown className="mx-2" />
@@ -163,7 +165,7 @@ export function NavigationItems({ item }: any) {
                     {item.links.map((e: any, index: number) => (
                         <DropdownMenuItem
                             key={index}
-                            className="font-medium py-3 px-4 rounded-xl gap-2 group hover:!bg-indigo-500 hover:!text-slate-100 text-base"
+                            className="font-medium py-3 px-4 rounded-xl gap-2 group hover:!bg-indigo-500 hover:!text-slate-100 text-sm"
                         >
                             {/* Only show the icon if it exists */}
                             {e.icon && (

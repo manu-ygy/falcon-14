@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react';
-import DashboardSidebar from '@/src/components/custom/dashboard/sidebar';
-import Profile from '@/src/components/custom/dashboard/profile';
-import { House, User, File } from '@phosphor-icons/react/dist/ssr';
+import DashboardSidebar from '@/components/custom/dashboard/sidebar';
+import Profile from '@/components/custom/dashboard/profile';
+import { House, User, File, Folder } from '@phosphor-icons/react/dist/ssr';
 
 // Fungsi DashboardLayout dengan links yang langsung didefinisikan
 export default function DashboardLayout({
@@ -17,18 +17,30 @@ export default function DashboardLayout({
         {
             title: 'User',
             icon: User,
+            href: '/admin/user',
             sublinks: [
-                { title: 'Siswa', href: '/admin/user/student' },
-                { title: 'Guru', href: '/admin/user/teacher' },
+                { title: 'Grup', href: '/admin/user/group' },
             ],
         },
-        { title: 'Konten', icon: File, href: '/admin/content' },
+        { 
+            title: 'Konten', 
+            icon: File, 
+            href: '/admin/content',
+            sublinks: [
+                { title: 'Mengedit: Lorem ipsum dolor', href: '/admin/content/editor'}
+            ]
+        },
+        {
+            title: 'Halaman',
+            icon: Folder,
+            href: '/admin/pages'
+        }
     ];  
 
     return (
         <main className="flex flex-row relative w-full h-screen overflow-hidden gap-6">
             {/* Berikan props items kepada DashboardSidebar */}
-            <DashboardSidebar items={links} />
+            <DashboardSidebar title='Admin Panel' items={links} />
             <div className="flex flex-col gap-4 w-full overflow-y-auto p-8">
                 <Profile />
                 {children}

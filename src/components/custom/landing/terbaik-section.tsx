@@ -1,6 +1,6 @@
 'use client';
-import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/src/components/ui/carousel';
-import { cn } from '@/src/lib/utils';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
 import { GearFine, HandsPraying, Lego, LightbulbFilament, Rocket, Smiley, Translate } from '@phosphor-icons/react/dist/ssr';
 import React from 'react';
 const cards = [

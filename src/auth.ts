@@ -1,11 +1,11 @@
 import NextAuth from 'next-auth';
-import { PrismaAdapter } from '@auth/prisma-adapter';
 import prisma from './prisma/prisma';
+import { PrismaAdapter } from '@auth/prisma-adapter';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
-
-export const { handlers, auth, signIn, signOut } = NextAuth({
+ 
+export const { auth, handlers, signIn, signOut } = NextAuth({
     session: { strategy: 'jwt' },
     adapter: PrismaAdapter(prisma),
     pages: {
@@ -36,6 +36,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                     where: {
                         email: String(credentials.email),
                     },
+                    include: {
+                        userGroups: {
+                            select: {
+                                groupId: true
+                            }
+                        }
+                    }
                 });
 
                 if (
@@ -51,7 +58,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                     email: user.email,
                     name: user.name,
                     randomKey: 'Hey cool',
-                    accountType: user.accountType || 'guest', // Ensure default accountType
+                    accountType: user.accountType || 'guest',
                 };
             },
         }),
@@ -59,13 +66,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     callbacks: {
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user;
-            const paths = ['/dashboard'];
+            const paths = ['/dashboard', '/admin'];
             const isProtected = paths.some((path) =>
                 nextUrl.pathname.startsWith(path)
             );
 
             if (isProtected && !isLoggedIn) {
-                const redirectUrl = new URL('/api/auth/signin', nextUrl.origin);
+                const redirectUrl = new URL('/account/login', nextUrl.origin);
                 redirectUrl.searchParams.append('callbackUrl', nextUrl.href);
                 return Response.redirect(redirectUrl);
             }
@@ -80,6 +87,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                     id: u.id,
                     randomKey: u.randomKey,
                     accountType: u.accountType || 'guest', // Add accountType to token
+                    userGroups: u.userGroups || []
                 };
             }
             return token;
@@ -93,8 +101,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                     id: token.id as string,
                     randomKey: token.randomKey,
                     accountType: token.accountType || 'guest', // Add accountType to session
+                    userGroups: token.userGroups || []
                 },
             };
         },
     },
-});
+})

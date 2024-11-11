@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 
-import { cn } from '@/src/lib/utils';
-import { Button } from '@/src/components/ui/button';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import {
     Dialog,
     DialogContent,
@@ -10,7 +10,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from '@/src/components/ui/dialog';
+} from '@/components/ui/dialog';
 import {
     Drawer,
     DrawerClose,
@@ -20,10 +20,10 @@ import {
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
-} from '@/src/components/ui/drawer';
-import { Input } from '@/src/components/ui/input';
-import { Label } from '@/src/components/ui/label';
-import { useMediaQuery } from '@/src/hooks/use-media-query';
+} from '@/components/ui/drawer';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 export function EditProfileDialog() {
     const [open, setOpen] = React.useState(false);

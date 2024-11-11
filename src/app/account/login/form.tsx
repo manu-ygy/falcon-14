@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
-import { LoginUserInput, loginUserSchema } from '@/src/lib/user-schema';
-import { Button } from '@/src/components/ui/button';
-import { Input } from '@/src/components/ui/input';
+import { LoginUserInput, loginUserSchema } from '@/lib/user-schema';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Envelope, Eye, GoogleLogo, Key, SpinnerGap } from '@phosphor-icons/react/dist/ssr';
 
 export const LoginForm = () => {

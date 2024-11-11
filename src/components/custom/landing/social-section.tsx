@@ -1,5 +1,5 @@
-import { Button } from '@/src/components/ui/button';
-import { cn } from '@/src/lib/utils';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { FacebookLogo, InstagramLogo, TiktokLogo, YoutubeLogo } from '@phosphor-icons/react/dist/ssr';
 import Image from 'next/image';
 import React from 'react';

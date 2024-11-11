@@ -1,15 +1,11 @@
-import withMDX from '@next/mdx';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   eslint: {
     ignoreDuringBuilds: true
   }
+  // Tambahkan koma di sini untuk memisahkan properti rewrites dari properti lainnya
   // Konfigurasi lain yang diperlukan di sini
 };
 
-export default withMDX({
-  extension: /\.mdx?$/,
-})(nextConfig);
+export default nextConfig
