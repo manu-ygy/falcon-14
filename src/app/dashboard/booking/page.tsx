@@ -23,14 +23,13 @@ const Recommendation = () => {
     const recommendations = [
         { city: 'Tokyo', country: 'Japan', code: 'NRT', thumbnailUrl: 'https://assets.editorial.aetnd.com/uploads/2013/07/gettyimages-1390815938.jpg' },
         { city: 'Beijing', country: 'China', code: 'PEK', thumbnailUrl: 'https://www.grandmercure.com/wp-content/uploads/2020/04/BEIJING_1_MAIN-shutterstock_1263558487__001-2200x1200.jpg' },
-        { city: 'Seoul', country: 'South Korea', code: 'ICN', thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQWDbhqTkjqyyZbpd49gCs5xNzBc72VqZP6w&s' }
     ];
 
     return (
-        <div className = "w-full p-4 lg:p-16 bg-qmaroon-500 rounded-3xl text-slate-100 lg:pb-24">
+        <div className = "w-full p-4 lg:p-16 bg-white rounded-3xl lg:pb-24">
             <div className = "flex flex-col">
                 <div className = "flex flex-col lg:flex-row lg:gap-8 gap-4 items-center mb-4 p-4 lg:p-0">
-                    <h1 className = "text-3xl font-semibold">Mau terbang kemana?</h1>
+                    <h1 className = "text-3xl font-semibold text-qmaroon-500">Mau terbang kemana?</h1>
                     <div className = "flex flex-col w-full lg:min-w-3/4 items-start">
                         <div className = "bg-white w-full rounded-full flex items-center px-4 border border-slate-400/50">
                             <MagnifyingGlass size = {24} className = "text-slate-400/70"/>
@@ -70,7 +69,7 @@ const Recommendation = () => {
                 </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 lg:gap-4 gap-12 bg-white rounded-3xl p-4">
+            <div className="grid lg:grid-cols-2 lg:gap-4 gap-12 bg-white rounded-3xl">
                 {recommendations.map((item, index) => (
                     <RecommendationItem
                         key={index}

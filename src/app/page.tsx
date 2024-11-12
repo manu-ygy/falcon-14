@@ -5,7 +5,7 @@ import Hero from '@/components/custom/landing/hero';
 import SocialSection from '@/components/custom/landing/social-section';
 import TerbaikSection from '@/components/custom/landing/terbaik-section';
 import CarouselSection from '@/components/custom/landing/carousel-section';
-import PPDBSection from '../components/custom/landing/ppdb-section';
+import PPDBSection from '@/components/custom/landing/ppdb-section';
 import Navbar from '@/components/custom/navbar';
 import Image from 'next/image';
 

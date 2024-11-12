@@ -32,7 +32,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ items, forceMobile 
   : ''
   
   return (
-    <div className={cn("flex flex-row max-md:fixed max-md:w-full max-md:bg-background/90 max-md:backdrop-blur-sm max-md:border-t md:flex-col items-center w-fit max-md:bottom-0 z-30 max-md:p-4 gap-2 p-6", forceMobileStyle, forceMobile ? 'absolute w-full left-0 bottom-0 bg-white' : 'rounded-2xl')}>
+    <div className={cn("flex sticky flex-row max-md:fixed max-md:w-full max-md:bg-background/90 max-md:backdrop-blur-sm max-md:border-t md:flex-col items-center w-fit max-md:bottom-0 z-30 max-md:p-4 gap-2 p-6", forceMobileStyle, forceMobile ? 'absolute w-full left-0 bottom-0 bg-white' : 'rounded-2xl')}>
         {!forceMobile && 
             <Image
             src="/images/yss.png"

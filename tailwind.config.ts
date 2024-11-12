@@ -64,16 +64,16 @@ const config: Config = {
 				900: '#361124',  // Sangat gelap, hampir hitam
 			},			
 			qgold: {
-				50: '#fdf6e3',    // Sangat terang, hampir putih dengan sentuhan emas lembut
-				100: '#f9e1b0',    // Terang, seperti warna gading dengan nuansa emas
-				200: '#f1d383',    // Warna emas cerah dan lembut
-				300: '#e8c04c',    // Warna emas yang lebih kaya
-				400: '#e1a134',    // Emas kaya, lebih gelap
-				500: '#DF8B43',    // Warna emas khas (asli)
-				600: '#bf7a3b',    // Emas lebih gelap dengan sentuhan oranye
-				700: '#9f6a2f',    // Emas dengan sedikit kedalaman
-				800: '#7f5b25',    // Gelap, seperti emas tua
-				900: '#5e4720',    // Sangat gelap, mendekati cokelat tua dengan sentuhan emas
+				50: '#cbe7f9',    // Sangat terang, hampir putih dengan sentuhan biru muda
+				100: '#a3d1f4',    // Terang, biru muda yang lembut
+				200: '#7bbaf0',    // Biru muda yang lebih pekat
+				300: '#559ce9',    // Biru cerah yang lebih intens
+				400: '#338ee3',    // Biru yang lebih dalam, sedikit lebih kuat
+				500: '#0090e0',    // Warna biru asli yang solid
+				600: '#0077c1',    // Biru lebih gelap, lebih intens
+				700: '#00629b',    // Biru dengan kedalaman lebih
+				800: '#004d79',    // Biru tua, namun tetap ada kesan biru terang
+				900: '#00345a',    // Gelap,		  
 			},
 			
   		},
