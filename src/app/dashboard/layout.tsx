@@ -25,7 +25,7 @@ export default function DashboardLayout({
         <main className="fixed flex flex-col row relative w-full h-screen overflow-hidden">
             <div className = "flex flex-row relative w-full h-screen pt-8 overflow-y-auto">
                 <DashboardSidebar items={links}/>
-                <div className="flex flex-col gap-4 w-3/4 p-4 lg:p-8 relative rounded-t-[3rem] bg-slate-100 h-max">
+                <div className="flex flex-col gap-4 w-full lg:w-3/4 p-4 lg:p-8 relative rounded-t-[3rem] bg-slate-100 h-max">
                     {/**
                      *                     <div className = "rounded-t-[3rem] bg-qmaroon-500 mask-image-b mask-image-start-70 absolute w-full h-[32rem] top-0 left-0 object-cover">
                        
@@ -37,7 +37,7 @@ export default function DashboardLayout({
                     </div>
                 </div>
 
-                <div className = "w-1/4 bg-white mt-6 rounded-3xl mx-6 flex flex-col gap-6 sticky top-0">
+                <div className = "w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
                     <Profile/>
 
                     <h1 className = "text-3xl font-semibold text-qmaroon-500">Notifikasi</h1>
@@ -45,11 +45,11 @@ export default function DashboardLayout({
                     <div className = "flex flex-col gap-4">
                         <div className = "w-full border border-slate-400/50 rounded-3xl p-4 flex gap-4 items-center">
                             <div className = "relative w-52 h-12">
-                                <img src = "devin.jpeg" className = "absolute left-0 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                <img src = "/devin.jpeg" className = "absolute left-0 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
                                 </img>
-                                <img src = "devin.jpeg" className = "absolute left-6 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                <img src = "/devin.jpeg" className = "absolute left-6 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
                                 </img>
-                                <img src = "devin.jpeg" className = "absolute left-12 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                <img src = "/devin.jpeg" className = "absolute left-12 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
                                 </img>
                             </div>
 

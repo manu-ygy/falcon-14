@@ -4,7 +4,7 @@ import {
   Heart
 } from '@phosphor-icons/react/dist/ssr';
 
-const SNSPage = () => {
+const ProfilePage = () => {
     return (
         <div className="w-full h-full bg-white rounded-3xl p-8 flex flex-col gap-6">
           <h1 className = "text-3xl font-semibold text-qmaroon-500">SNS</h1>
@@ -92,4 +92,4 @@ const SNSPage = () => {
     );
 };
 
-export default SNSPage;
+export default ProfilePage;

@@ -34,7 +34,7 @@ const WorldMap = dynamic(() => import('@/components/custom/dashboard/map'), { ss
 const DashboardFeeds = () => {
     return (
         <div className = "bg-white w-full p-8 rounded-3xl flex flex-col gap-6">
-            <h1 className = "text-3xl font-semibold">Travelinspo</h1>
+            <h1 className = "text-3xl font-semibold text-qmaroon-500">Travelinspo</h1>
 
             <div className = "flex flex-col rounded-3xl relative gap-4">
                 <div className = "flex gap-4 items-center ml-4">
@@ -71,23 +71,25 @@ const DashboardFeeds = () => {
 const ToolContainer = () => {
     return (
         <div className = "bg-white p-8 rounded-3xl w-full flex flex-col items-start gap-4 h-fit">
-            <h1 className = "text-3xl font-semibold">Tools</h1>
+            <h1 className = "text-3xl font-semibold text-qmaroon-500">Alat</h1>
 
-            <div className = "grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div className = "flex gap-4 items-start">
                 <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "w-24 h-24 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/open-luggage-3d-icon-download-in-png-blend-fbx-gltf-file-formats--hello-logo-bag-suitcase-halloween-travel-element-pack-icons-8904803.png?f=webp"/>
+                    <img className = "min-w-24 h-24 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/open-luggage-3d-icon-download-in-png-blend-fbx-gltf-file-formats--hello-logo-bag-suitcase-halloween-travel-element-pack-icons-8904803.png?f=webp"/>
                     <span>PackAI</span>
                 </Button>
 
                 <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "w-24 h-24 p-2 rounded-3xl bg-gradient-to-b from-lime-300 to-lime-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/travel-guide-book-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--instruction-tourist-adventure-pack-holidays-illustrations-3626605.png?f=webp"/>
-                    <span>Newbie guide</span>
+                    <img className = "min-w-24 h-24 p-2 rounded-3xl bg-gradient-to-b from-lime-300 to-lime-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/travel-guide-book-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--instruction-tourist-adventure-pack-holidays-illustrations-3626605.png?f=webp"/>
+                    <span className = "max-w-20">Newbie <br/>guide</span>
                 </Button>
 
                 <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                <img className = "w-24 h-24 rounded-3xl" src = "https://media.istockphoto.com/id/1451724167/vector/3d-vector-yellow-suitcase-summer-holiday-time-to-travel-concept.jpg?s=612x612&w=0&k=20&c=D-8GdSmOA7M2Mf511MVA-TDnrUjXCEeHws0zn93kFkU="/>
-                    <span>Luggage Tracker</span>
+                <img className = "min-w-24 h-24 rounded-3xl" src = "https://media.istockphoto.com/id/1451724167/vector/3d-vector-yellow-suitcase-summer-holiday-time-to-travel-concept.jpg?s=612x612&w=0&k=20&c=D-8GdSmOA7M2Mf511MVA-TDnrUjXCEeHws0zn93kFkU="/>
+                    <span>Luggage <br/>Tracker</span>
                 </Button>
+
+                <div className = "w-full"></div>
             </div>
         </div>
     )
@@ -96,21 +98,23 @@ const ToolContainer = () => {
 const News = () => {
     return (
         <div className = "bg-white rounded-3xl p-8 flex flex-col gap-6">
-            <h1 className = "text-3xl font-semibold">Promo</h1>
+            <h1 className = "text-3xl font-semibold text-qmaroon-500">Promo</h1>
 
-            <div className = "w-full flex rounded-2xl border border-slate-400/50 p-8 gap-8 items-center">
-                <div className="text-3xl font-black w-1/3">
+            <div className = "w-full flex flex-col rounded-2xl border border-slate-400/50 p-8 gap-8 items-center">
+                <div className="text-3xl font-black">
                     <span className="bg-clip-text text-transparent bg-gradient-to-b from-qmaroon-600 to-qmaroon-400 uppercase word-break">
                         Beli 1 Gratis 1
                     </span>
                 </div>
 
-                <div className = "w-2/3 w-full flex-col">
+                <div className = "w-full flex flex-col gap-2">
                     <span>Dapatkan promo menarik </span>
 
-                    <span>Kadaluarsa dalam</span>
-                    <div className = "font-mono border border-slate-400/50 p-4 rounded-2xl">
-                        20:00:00
+                    <div className = "border border-slate-400/50 p-2 rounded-3xl">
+                        <span className = "text-sm opacity-70">Kadaluarsa dalam</span>
+                        <div className = "font-mono text-2xl">
+                            20:00:00
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,20 +142,20 @@ const DashboardPage = () => {
                 </div>
             </div>
 
-            <div className = "grid lg:grid-cols-4 gap-6">
+            <div className = "lg:grid lg:grid-cols-4 flex flex-col gap-6">
                 <div className = "col-span-3">
                     <ToolContainer />
                 </div>
 
-                <a className = "w-full h-full bg-gradient-to-r from-qmaroon-500 to-qmaroon-400 rounded-3xl p-8 text-slate-100 relative items-start" href = "/dashboard/booking">
+                <a className = "lg:h-full lg:col-span-1 group w-full h-64 bg-gradient-to-r from-qmaroon-500 to-qmaroon-400 rounded-3xl p-8 text-slate-100 relative items-start" href = "/dashboard/booking">
                     <h1 className = "text-3xl font-semibold z-10 word-break">Pesan tiket</h1>
 
                     <div className = "absolute bottom-0 left-0 overflow-hidden w-64 h-64 rounded-bl-3xl">
-                        <div className = "w-56 h-28 bg-slate-200 absolute bottom-[8px] -left-8 -rotate-[24deg] rounded-xl">
+                        <div className = "w-56 h-28 bg-slate-200 absolute bottom-[8px] -left-8 -rotate-[24deg] rounded-xl group-hover:scale-125 transition duration-250">
                             
                         </div>
 
-                        <div className = "absolute -left-4 bottom-0 w-56 -rotate-12">
+                        <div className = "absolute -left-4 bottom-0 w-56 -rotate-12 group-hover:scale-125 transition duration-250">
                             <div className = "relative text-zinc-900 rounded-md flex w-full overflow-hidden">
                                 <div className = "absolute w-full h-1/3 bg-white rounded-t-lg"></div>
                                 <div className = "absolute w-full h-1/3 bottom-0 bg-white shadow-2xl rounded-b-lg"></div>

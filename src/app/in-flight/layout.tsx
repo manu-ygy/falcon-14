@@ -21,16 +21,14 @@ export default function DashboardLayout({
 
     return (
         <main className="flex relative w-full h-screen overflow-hidden lg:p-4">
-            <div className = "flex flex-col relative mx-auto w-full md:w-[350px] md:border-[12px] md:rounded-[50px] h-screen border-zinc-800 shadow-lg overflow-hidden">
+            <div className = "flex flex-col relative mx-auto w-full bg-white md:w-[350px] md:border-[12px] md:rounded-[50px] h-screen border-zinc-800 shadow-lg overflow-hidden">
                 <div className = "w-1/2 select-none bg-zinc-900 rounded-b-full mx-auto text-center z-10 h-max hidden md:block">
                     <span>Skibidi</span>
                 </div>
                 
-                <div className="flex flex-col gap-4 overflow-y-auto bg-qmaroon-500 w-full h-full">
+                <div className="flex flex-col gap-4 overflow-y-auto w-full h-full">
                     {children}
                 </div>
-
-                <DashboardSidebar items={links} forceMobile={true}/>
             </div>
         </main>
     );

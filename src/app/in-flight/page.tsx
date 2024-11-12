@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
     Airplane,
     ListChecks,
+    ThermometerSimple,
 } from '@phosphor-icons/react/dist/ssr';
 
 import { Plane, TrendingUp, TrendingUpIcon } from 'lucide-react';
@@ -18,6 +19,8 @@ import {
 } from '@/components/ui/card';
 import Profile from '@/components/custom/dashboard/profile'
 import { motion } from 'framer-motion';
+
+import { Button } from '@/components/ui/button';
 
 const DashboardHero = () => {
     return (
@@ -91,7 +94,7 @@ const Steps = () => {
 
 const Notch = () => {
     return (
-        <div className = "absolute w-1/2 mt-4 flex justify-center left-1/2 -translate-x-1/2">
+        <div className = "w-full col-span-3 mt-4 flex justify-center">
             <div className = "bg-white w-full flex flex-col items-center justify-center -gap-2 rounded-full px-6 py-1 bg-white">
                 <span className = "text-xs whitespace-nowrap opacity-70">Estimasi sampai</span>
                 <h1 className = "text-3xl font-bold">06.20</h1>
@@ -102,13 +105,94 @@ const Notch = () => {
 
 const InFlightPage = () => {
     return (
-        <div className = "w-full h-full relative">
+        <div className = "w-full h-full relative p-4 flex flex-col gap-4">
             <PlaneOverlay/>
 
-            <Notch/>
+            <div className = "w-full h-full bg-white relative rounded-3xl">
+                <div className = "w-full h-full rounded-3xl bg-gradient-to-b from-qgold-600 to-qgold-300">
+                    <img src = "https://png.pngtree.com/png-vector/20221223/ourmid/pngtree-top-view-white-airplane-with-four-engines-png-image_6531214.png" className = "p-4 plane drop-shadow-xl absolute top-1/2 z-10"/>
+                    
+                    <div className = "w-full h-full relative overflow-hidden">
+                        <img src = "/cloud/1.png" className = "absolute right-0 translate-x-1/2 -translate-y-full cloud z-20"/>
+                        <img src = "/cloud/2.png" className = "absolute left-0 top-1/2 -translate-x-1/2 -translate-y-full cloud-2"/>
+                        <img src = "/cloud/4.png" className = "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full cloud"/>
+                    </div>
 
-            <div className = "h-[40vh] w-full bg-red-100">
+                    <div className = "z-20 absolute top-4 left-1/2 -translate-x-1/2 rounded-full bg-white shadow-lg text-xs font-medium text-center p-4">
+                        Jakarta (CGY) Tokyo (NRT)
+                    </div>
+
+                    <div className = "absolute left-1/2 bottom-4 shadow-lg -translate-x-1/2 rounded-3xl px-6 py-2 flex flex-col bg-white w-3/4 items-center z-20">
+                            <span className = "text-sm opacity-70">Estimasi sampai</span>
+
+                            <div className = "flex items-center gap-1 mb-2">
+                                <h2 className = "text-3xl font-semibold text-qmaroon-500">2</h2>
+                                <span className = "mr-2 text-sm opacity-70">j</span>
+
+                                <h2 className = "text-3xl font-semibold text-qmaroon-500">30</h2>
+                                <span className = "text-sm opacity-70">m</span>
+                            </div>
+
+                            <div className = "flex items-center text-sm gap-2">
+                                <ThermometerSimple size = {16}/>
+                                <span>26 C</span>
+                            </div>
+                    </div>
+                </div>
             </div>
+
+            <div className = "flex justify-center gap-4">
+                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
+                    <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
+                    <span>Game</span>
+                </Button>
+
+                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
+                    <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
+                    <span>Chat</span>
+                </Button>
+
+                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
+                    <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
+                    <span>Game</span>
+                </Button>
+            </div>
+
+            <style jsx>{`
+                .cloud {
+                    position: absolute;
+                    top: 0;
+                    animation: moveClouds 5s linear infinite;
+                }
+
+                .cloud-2 {
+                    position: absolute;
+                    top: 0;
+                    animation: moveClouds 7s linear infinite;
+                }
+
+                .plane {
+                    animation: movePlane 5s linear infinite alternate;
+                }
+
+                @keyframes moveClouds {
+                    0% {
+                        top: 0;
+                    }
+                    100% {
+                        top: 150%;
+                    }
+                }
+
+                @keyframes movePlane {
+                    0% {
+                        transform: scale(1.05) translateY(-50%);
+                    }
+                    100% {
+                        transform: scale(0.95) translateY(-50%);
+                    }
+                }
+            `}</style>
         </div>
     );
 };
