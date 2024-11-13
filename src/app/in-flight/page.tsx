@@ -106,8 +106,6 @@ const Notch = () => {
 const InFlightPage = () => {
     return (
         <div className = "w-full h-full relative p-4 flex flex-col gap-4">
-            <PlaneOverlay/>
-
             <div className = "w-full h-full bg-white relative rounded-3xl">
                 <div className = "w-full h-full rounded-3xl bg-gradient-to-b from-qgold-600 to-qgold-300">
                     <img src = "https://png.pngtree.com/png-vector/20221223/ourmid/pngtree-top-view-white-airplane-with-four-engines-png-image_6531214.png" className = "p-4 plane drop-shadow-xl absolute top-1/2 z-10"/>
@@ -142,10 +140,12 @@ const InFlightPage = () => {
             </div>
 
             <div className = "flex justify-center gap-4">
-                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
-                    <span>Game</span>
-                </Button>
+                <a href = "/in-flight/game">
+                    <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
+                        <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
+                        <span>Game</span>
+                    </Button>
+                </a>
 
                 <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
                     <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>

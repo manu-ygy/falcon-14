@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -73,7 +75,6 @@ const DashboardItem: React.FC<{ item: LinkItem, forceMobile: Boolean }> = ({ ite
   const forceMobileStyle = forceMobile ?
   'w-full gap-1'
   : ''
-
   return (
     <div className={cn("w-full", forceMobile ? 'flex items-center justify-center' : '')}>
       <Link

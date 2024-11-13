@@ -2,34 +2,13 @@
 
 import {
     ChatCenteredDots,
-    Clock,
-    Download,
-    Flag,
     Heart,
-    ListChecks,
     MapPinArea,
-    Ruler,
-    Share,
-    Speedometer,
     AirplaneTilt
 } from '@phosphor-icons/react/dist/ssr';
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card';
-
 import { Button } from '@/components/ui/button';
-
-import dynamic from 'next/dynamic';
-import { MapPin, PlaneLanding } from 'lucide-react';
-import DisplayGlobe from '@/components/custom/globe';
-
-// Import komponen secara dinamis agar mendukung server-side rendering
-const WorldMap = dynamic(() => import('@/components/custom/dashboard/map'), { ssr: false });
+import PackDialog from '@/components/custom/dashboard/pack';
 
 const DashboardFeeds = () => {
     return (
@@ -74,11 +53,8 @@ const ToolContainer = () => {
             <h1 className = "text-3xl font-semibold text-qmaroon-500">Alat</h1>
 
             <div className = "flex gap-4 items-start">
-                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "min-w-24 h-24 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/open-luggage-3d-icon-download-in-png-blend-fbx-gltf-file-formats--hello-logo-bag-suitcase-halloween-travel-element-pack-icons-8904803.png?f=webp"/>
-                    <span>PackAI</span>
-                </Button>
-
+                <PackDialog/>
+                
                 <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
                     <img className = "min-w-24 h-24 p-2 rounded-3xl bg-gradient-to-b from-lime-300 to-lime-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/travel-guide-book-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--instruction-tourist-adventure-pack-holidays-illustrations-3626605.png?f=webp"/>
                     <span className = "max-w-20">Newbie <br/>guide</span>
@@ -195,56 +171,6 @@ const DashboardPage = () => {
                 </div>
 
                 <News/>
-            </div>
-
-            <div className = "w-full bg-white p-8 rounded-3xl flex">
-                <div className = "flex flex-col gap-6 w-1/2">
-                    <div className = "w-full h-full p-8 border rounded-3xl border-slate-400/50 flex flex-col gap-6">
-                        <div className = "flex flex-col mb-4 gap-2">
-                            <h1 className = "font-semibold text-3xl text-qmaroon-500">Travel Statistics</h1>
-                            <span className = "opacity-70 text-sm">Dihitung sejak 11 Januari 2024</span>
-                        </div>
-
-                        <div className = "flex items-center gap-4 text-lg">
-                            <Clock className='opacity-70' size = {40}/>
-                            <span className='opacity-70'>Time spent</span>
-                            <span className = "font-semibold ml-auto">40 hours</span>
-                        </div>
-
-                        <div className = "flex items-center gap-4 text-lg">
-                            <PlaneLanding className='opacity-70' size = {40}/>
-                            <span className='opacity-70'>Trip done</span>
-                            <span className = "font-semibold ml-auto">12</span>
-                        </div>
-
-                        <div className = "flex items-center gap-4 text-lg">
-                            <Flag className='opacity-70' size = {40}/>
-                            <span className='opacity-70'>Country visited</span>
-                            <span className = "font-semibold ml-auto">8</span>
-                        </div>
-
-                        <div className = "flex items-center gap-4 text-lg">
-                            <Ruler className='opacity-70' size = {40}/>
-                            <span className='opacity-70'>Jarak ditempuh</span>
-                            <span className = "font-bold ml-auto">50800 km</span>
-                        </div>
-
-                        <span className='mt-auto bg-qmaroon-500 text-slate-100 rounded-2xl p-4 font-medium text-sm'>Quick trivia: Time that you done for travels can be used for cooking 25 full-set dinner!</span>
-                    </div>
-                </div>
-
-                <div className = "flex flex-col w-1/2 items-center justify-center">
-                    <h1 className = "text-3xl font-semibold text-center text-qmaroon-500">Expoloration Map</h1>
-
-                    <div className = "relative w-full h-full">
-                        <WorldMap/>
-
-                        <div className = "absolute bg-qmaroon-500 px-6 py-4 bottom-0 right-0 rounded-full flex text-slate-100 gap-4">
-                            <Download size = {24}/>
-                            <Share size = {24}/>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );
