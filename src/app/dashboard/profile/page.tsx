@@ -21,7 +21,7 @@ const ExplorationMap = () => {
       <div className = "flex flex-col gap-6 w-1/2">
           <div className = "w-full h-full p-8 border rounded-3xl border-slate-400/50 flex flex-col gap-6">
               <div className = "flex flex-col mb-4 gap-2">
-                  <h1 className = "font-semibold text-3xl text-qmaroon-500">Travel Statistics</h1>
+                  <h1 className = "font-semibold text-3xl text-qmaroon-500">Statistik Perjalanan</h1>
                   <span className = "opacity-70 text-sm">Dihitung sejak 11 Januari 2024</span>
               </div>
 
@@ -49,12 +49,12 @@ const ExplorationMap = () => {
                   <span className = "font-bold ml-auto">50800 km</span>
               </div>
 
-              <span className='mt-auto bg-qmaroon-500 text-slate-100 rounded-2xl p-4 font-medium text-sm'>Quick trivia: Time that you done for travels can be used for cooking 25 full-set dinner!</span>
+              <span className='mt-auto bg-qmaroon-500 text-slate-100 rounded-2xl p-4 font-medium text-sm'>Trivia: Time that you done for travels can be used for cooking 25 full-set dinner!</span>
           </div>
       </div>
 
       <div className = "flex flex-col w-1/2 items-center justify-center">
-          <h1 className = "text-3xl font-semibold text-center text-qmaroon-500">Expoloration Map</h1>
+          <h1 className = "text-3xl font-semibold text-center text-qmaroon-500">Peta Eksplorasi</h1>
 
           <div className = "relative w-full h-full">
               <WorldMap/>

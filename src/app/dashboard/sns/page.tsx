@@ -7,7 +7,7 @@ import {
 const SNSPage = () => {
     return (
         <div className="w-full h-full bg-white rounded-3xl p-8 flex flex-col gap-6">
-          <div className = "grid grid-cols-4 gap-6">
+          <div className = "lg:grid lg:grid-cols-4 gap-6">
             <div className = "flex flex-col h-64 bg-zinc-900 rounded-3xl relative group overflow-hidden col-span-3">
                 <div className = "absolute w-full h-full top-o left-0 bg-gradient-to-r from-qmaroon-500 to-qmaroon-400 opacity-70 rounded-3xl"></div>
                 <img className = "absolute w-full h-full object-cover top-o left-0 rounded-3xl opacity-60 group-hover:opacity-100 scale-100 group-hover:scale-125 transition duration-500" src = "https://deih43ym53wif.cloudfront.net/Bora-Bora-French-Polynesia-shutterstock_1400768336.jpg_3eb9ccf93e.jpg"/>
@@ -17,12 +17,12 @@ const SNSPage = () => {
                 </div>
             </div>
 
-            <div className = "w-full h-full bg-gradient-to-b from-qmaroon-600 to-qmaroon-400 rounded-3xl">
+            <div className = "w-full h-full bg-gradient-to-b from-qmaroon-600 to-qmaroon-400 rounded-3xl hidden lg:block">
 
             </div>
           </div>
 
-          <div className = "grid grid-cols-2 gap-6">
+          <div className = "grid lg:grid-cols-2 gap-6">
             <div className = "flex flex-col gap-6">
               <div className = "flex gap-4">
                 <a href = "" className = "w-full">

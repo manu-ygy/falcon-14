@@ -106,11 +106,16 @@ const Notch = () => {
 const InFlightPage = () => {
     return (
         <div className = "w-full h-full relative p-4 flex flex-col gap-4">
+            <div className = "w-full bg-slate-100 p-4 rounded-3xl flex items-center text-sm gap-2">
+                <ThermometerSimple size = {16}/>
+                <span>26 C</span>
+            </div>
+
             <div className = "w-full h-full bg-white relative rounded-3xl">
                 <div className = "w-full h-full rounded-3xl bg-gradient-to-b from-qgold-600 to-qgold-300">
-                    <img src = "https://png.pngtree.com/png-vector/20221223/ourmid/pngtree-top-view-white-airplane-with-four-engines-png-image_6531214.png" className = "p-4 plane drop-shadow-xl absolute top-1/2 z-10"/>
+                    <img src = "https://png.pngtree.com/png-vector/20221223/ourmid/pngtree-top-view-white-airplane-with-four-engines-png-image_6531214.png" className = "p-4 plane drop-shadow-xl select-none absolute top-1/2 z-10"/>
                     
-                    <div className = "w-full h-full relative overflow-hidden">
+                    <div className = "w-full h-full relative overflow-hidden select-none">
                         <img src = "/cloud/1.png" className = "absolute right-0 translate-x-1/2 -translate-y-full cloud z-20"/>
                         <img src = "/cloud/2.png" className = "absolute left-0 top-1/2 -translate-x-1/2 -translate-y-full cloud-2"/>
                         <img src = "/cloud/4.png" className = "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full cloud"/>
@@ -120,41 +125,44 @@ const InFlightPage = () => {
                         Jakarta (CGY) Tokyo (NRT)
                     </div>
 
-                    <div className = "absolute left-1/2 bottom-4 shadow-lg -translate-x-1/2 rounded-3xl px-6 py-2 flex flex-col bg-white w-3/4 items-center z-20">
-                            <span className = "text-sm opacity-70">Estimasi sampai</span>
+                    <div className = "absolute left-1/2 bottom-4 shadow-lg -translate-x-1/2 rounded-3xl px-6 py-4 flex flex-col bg-white w-3/4 gap-1 items-center z-20">
+                        <span className = "text-sm opacity-70">Estimasi sampai</span>
 
-                            <div className = "flex items-center gap-1 mb-2">
-                                <h2 className = "text-3xl font-semibold text-qmaroon-500">2</h2>
-                                <span className = "mr-2 text-sm opacity-70">j</span>
+                        <div className = "flex items-center gap-1">
+                            <h2 className = "text-3xl font-semibold text-qmaroon-500">2</h2>
+                            <span className = "mr-2 text-sm opacity-70">j</span>
 
-                                <h2 className = "text-3xl font-semibold text-qmaroon-500">30</h2>
-                                <span className = "text-sm opacity-70">m</span>
-                            </div>
-
-                            <div className = "flex items-center text-sm gap-2">
-                                <ThermometerSimple size = {16}/>
-                                <span>26 C</span>
-                            </div>
+                            <h2 className = "text-3xl font-semibold text-qmaroon-500">30</h2>
+                            <span className = "text-sm opacity-70">m</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className = "flex justify-center gap-4">
+            <div className = "grid grid-cols-4 justify-center gap-4">
                 <a href = "/in-flight/game">
                     <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                        <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
-                        <span>Game</span>
+                        <img className = "min-w-16 h-16 p-2 rounded-3xl bg-gradient-to-b from-violet-400 to-violet-300" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
+                        <span className = "text-xs">Permainan</span>
                     </Button>
                 </a>
 
-                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
-                    <span>Chat</span>
-                </Button>
+                <a href = "/in-flight/chat">
+                    <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
+                        <img className = "min-w-16 h-16 p-2 rounded-3xl bg-gradient-to-b from-yellow-500 to-yellow-300" src = "https://cdn3d.iconscout.com/3d/free/thumb/free-chat-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--message-communication-chatting-conversation-messaging-user-interface-pack-illustrations-4715767.png"/>
+                        <span className = "text-xs">Obrolan</span>
+                    </Button>
+                </a>
 
-                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "min-w-20 h-20 p-2 rounded-3xl bg-gradient-to-b from-violet-300 to-violet-400" src = "https://static.vecteezy.com/system/resources/thumbnails/045/686/337/small/console-game-controller-3d-item-free-png.png"/>
-                    <span>Game</span>
+                <Button className = "w-full col-span-2 flex flex-col p-0 gap-2" variant={'ghost'}>
+                    <div className = "w-full h-full rounded-3xl bg-gradient-to-b from-pink-500 to-pink-300 relative">
+                        <div className = "absolute w-full h-32 bottom-0 overflow-hidden rounded-3xl">
+                            <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/torii-gate-3d-icon-download-in-png-blend-fbx-gltf-file-formats--bonzai-japan-asian-pack-holidays-icons-8878357.png&s" className = "-bottom-5 absolute left-1/2 -translate-x-1/2 w-[105px]"/>
+                            <img src = "/images/daruma.png" className = "absolute z-10 w-[80px] -bottom-4 right-2 -scale-x-100"/>
+                            <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/sushi-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--roll-japanese-food-pack-drink-illustrations-3895631.png?f=webp" className = "absolute -bottom-6 w-[70px] left-2 -scale-x-100"></img>
+                        </div>
+                    </div>
+                    <span className = "text-xs">Kenali Jepang!</span>
                 </Button>
             </div>
 
