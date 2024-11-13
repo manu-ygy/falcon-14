@@ -23,14 +23,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Check, Cross, Spinner, SpinnerGap, X } from "@phosphor-icons/react/dist/ssr"
 
 const PackDialog = () => {
   // Moved the state inside the component
   const [items, setItems] = useState<string[]>([])
   const [result, setResult] = useState<string[]>([])
+  const [isChecking, setIsChecking] = useState<boolean>(false)
 
   const getResponse = async () => {
     try {
+      setIsChecking(true)
       const response = await fetch('/api/pack', {
         method: 'POST',
         headers: {
@@ -73,12 +76,14 @@ Baterai cadangan dan power bank di bawah 20.000 mAh
 Barang berharga
 Obat-obatan dan alat medis yang diperlukan selama penerbangan
 Gas atau bahan yang mudah terbakar (ex: butana, korek api besar, cat semprot, dll)
-berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seorang packing assistant yang membantu user dengan cara memberi tahu barang yang di inputkan oleh user tidak boleh bawa dan boleh dibawa, jika iya, lebih baik diletakkan di kabin atau di koper (bisa juga keduanya). berikan respon dalam bentuk json, yang strukturnya terdiri: {name: (nama item, string), allowed: (boolean), reason: (alasan, string)}, tanpa menggunakan linebreak "\n" dan escape character "\". meski item tunggal, tetap gunakan []., daftar barangnya: ${items}`,
+
+berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seorang packing assistant yang membantu user dengan cara memberi tahu barang yang di inputkan oleh user tidak boleh bawa dan boleh dibawa, jika iya, lebih baik diletakkan di kabin atau di koper (bisa juga keduanya). berikan respon dalam bentuk json, yang strukturnya terdiri: {name: (nama item, string), allowed: (boolean), reason: (alasan, string)}, tanpa menggunakan linebreak "\n" dan escape character "\". meski item tunggal, tetap gunakan []., daftar barang yang akan dibawa: ${items}. anda tidak perlu memasukkan penejelasan barang-barang sebelumnya pada output.`,
         }),
       })
   
       const data = await response.json()
       setResult(JSON.parse(data.message[0].text.replaceAll('\\n', '').replaceAll('\\', '')))
+      setIsChecking(false)
     } catch (error) {
       console.error('Error:', error)
     }
@@ -100,36 +105,7 @@ berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seoran
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex items-center w-full">
-          <span className = "font-medium text-sm mr-auto">Barangmu:</span>
-
-          {result && result.length !== 0 && (
-            <Button onClick={() => setResult([])}>Reset</Button>
-          )}
-
-        </div>
-
-        {(result.length != 0) ? (
-          <div className="bg-slate-100 p-4 rounded-3xl flex flex-col gap-2 max-h-[50vh] overflow-y-auto">
-                      {result.map((item, index) => (
-              <div key={index} className="p-4 border rounded-2xl text-sm bg-white">
-                <p><strong>Nama Barang:</strong> {item.name}</p>
-                <p><strong>Diperbolehkan:</strong> {item.allowed ? "Ya" : "Tidak"}</p>
-                <p><strong>Alasan:</strong> {item.reason}</p>
-              </div>
-
-            ))}
-          </div>
-        ) : (
-          <div className="w-full">
-            <InputTags value={items} onChange={setItems} />
-          </div>
-        )}
-
-        <hr/>
-
-        <DialogFooter>
-          <div className="flex flex-col w-full gap-2">
+        <div className="flex flex-col w-full gap-2">
             <span className="text-sm font-medium">Negara tujuan:</span>
 
             <div className="flex gap-2">
@@ -153,10 +129,53 @@ berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seoran
                   </SelectGroup>
                 </SelectContent>
               </Select>
-
-              <Button type="submit" onClick={getResponse}>Periksa</Button>
             </div>
           </div>
+
+          <hr/>
+
+        <div className="flex items-center w-full">
+          <span className = "font-medium text-sm mr-auto">Barangmu:</span>
+
+          {result && result.length !== 0 && (
+            <Button onClick={() => setResult([])}>Reset</Button>
+          )}
+
+        </div>
+
+        {(result.length != 0) ? (
+          <div className="bg-slate-100 p-4 rounded-3xl flex flex-col gap-2 max-h-[50vh] overflow-y-auto">
+                      {result.map((item, index) => (
+              <div key={index} className="p-4 border rounded-2xl bg-white flex flex-col gap-2">
+                <div className = "flex gap-2 items-center">
+                  {(item.allowed) ? (
+                    <Check size = {20} className = "text-green-500" weight="bold"/>
+                  ) : (
+                    <X size = {20} className = "text-red-500" weight="bold"/>
+                  )}
+                  <h3 className = "font-semibold">{item.name}</h3>
+                </div>
+                {(item.reason) && (
+                  <p className = "text-sm opacity-70">Alasan: {item.reason}</p>
+                )}
+              </div>
+
+            ))}
+          </div>
+        ) : (
+          <div className="w-full">
+            <InputTags value={items} onChange={setItems} />
+          </div>
+        )}
+
+        <DialogFooter>          
+          <Button type="submit" className = "flex gap-2" onClick={getResponse} disabled={items.length == 0 || isChecking}>
+            {isChecking && (
+              <SpinnerGap size = {20} className = "animate-spin"/>
+            )
+
+            }
+            Periksa</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

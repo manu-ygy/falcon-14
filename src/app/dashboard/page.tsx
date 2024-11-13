@@ -9,6 +9,7 @@ import {
 
 import { Button } from '@/components/ui/button';
 import PackDialog from '@/components/custom/dashboard/pack';
+import LuggageDialog from '@/components/custom/dashboard/luggage';
 
 const DashboardFeeds = () => {
     return (
@@ -60,12 +61,7 @@ const ToolContainer = () => {
                     <span className = "max-w-20">Newbie <br/>guide</span>
                 </Button>
 
-                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                <img className = "min-w-24 h-24 rounded-3xl" src = "https://media.istockphoto.com/id/1451724167/vector/3d-vector-yellow-suitcase-summer-holiday-time-to-travel-concept.jpg?s=612x612&w=0&k=20&c=D-8GdSmOA7M2Mf511MVA-TDnrUjXCEeHws0zn93kFkU="/>
-                    <span>Luggage <br/>Tracker</span>
-                </Button>
-
-                <div className = "w-full"></div>
+                <LuggageDialog/>
             </div>
         </div>
     )

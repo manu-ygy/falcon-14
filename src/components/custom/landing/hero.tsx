@@ -1,11 +1,10 @@
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
-import Image from 'next/image';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
     return (
-        <div className="relative shadow-lg flex gap-6 lg:h-[calc(100vh-3rem)] max-md:min-h-screen w-[calc(100%-3rem)] text-white md:px-8 overflow-hidden bg-slate-900 rounded-2xl ml-6 my-6">
+        <div className="relative shadow-lg flex gap-6 lg:h-[calc(100vh-3rem)] max-md:min-h-screen w-[calc(100%-3rem)] text-white md:px-8 overflow-hidden bg-slate-900 rounded-[3rem] ml-6 my-6">
             {/* Gradient and background */}
             {/*
                        <div className="absolute w-full h-[150svh] min-h-[20rem] -right-0 bottom-0 -z-20 bg-slate-900"></div>
