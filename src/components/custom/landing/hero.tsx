@@ -14,11 +14,11 @@ const Hero = () => {
 
             <div className='flex flex-col justify-center z-10 md:w-2/3 w-full px-8 gap-2'>
                 <div className='flex flex-col gap-2'>
-                    <div className = "flex items-center flex gap-2 bg-white text-qmaroon-500 w-fit px-4 rounded-full mb-4">
+                    <div className = "flex flex-wrap items-center flex gap-2 bg-white text-qmaroon-500 w-fit px-4 py-2 rounded-3xl mb-4">
                         <img src = "/images/icon.png" className = "h-16"/>
                         <h2 className='text-2xl font-semibold'>Airstra</h2>
                         <span className = "text-sm">dari</span>
-                        <img className = "h-12 bg-white" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Qatar_Airways_logo.svg/2560px-Qatar_Airways_logo.svg.png"/>
+                        <img className = "h-12" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Qatar_Airways_logo.svg/2560px-Qatar_Airways_logo.svg.png"/>
                     </div>
 
                     <h2 className='text-5xl font-semibold'>Dari terbang sampai mendarat.</h2>
