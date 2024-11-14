@@ -440,8 +440,6 @@ const TicketPage = () => {
                     <SearchResult/>
                 </motion.div>
             )}
-
-            <div className = "w-full h-32 rounded-3xl bg-gradient-to-r from-qmaroon-600 to-qmaroon-400"></div>
         </div>
     );
 };

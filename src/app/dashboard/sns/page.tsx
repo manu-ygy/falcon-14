@@ -43,17 +43,13 @@ const SNSPage = () => {
     return (
       <div className = "w-full h-full flex flex-col gap-6">
         <div className = "lg:grid lg:grid-cols-4 gap-6">
-          <div className = "flex flex-col h-64 bg-zinc-900 rounded-3xl relative overflow-hidden col-span-3">
+          <div className = "flex flex-col h-64 bg-zinc-900 rounded-3xl relative overflow-hidden col-span-4">
               <div className = "absolute w-full h-full top-o left-0 bg-gradient-to-r from-qmaroon-500 to-qmaroon-400 opacity-70 rounded-3xl"></div>
               <img className = "absolute w-full h-full object-cover top-o left-0 rounded-3xl opacity-60 group-hover:opacity-100 scale-100 group-hover:scale-125 transition duration-500" src = "https://media.istockphoto.com/id/513820150/photo/idyllic-landscape-in-the-alps-with-green-meadows-and-flowers.jpg?s=612x612&w=0&k=20&c=hJT6SYkv8c_czzS9UA7UITYgeSCmSDjSfjQC7w8zVL4="/>
               <div className = "absolute bottom-8 left-8 flex flex-col text-slate-200 gap-1 opacity-100 group-hover:opacity-0">
                   <h1 className = "text-3xl font-semibold">Cari inspirasi liburanmu!</h1>
                   <span className = "text-sm opacity-70 font-medium">Jangan lewatkan petualangan keren teman-temanmu!</span>
               </div>
-          </div>
-
-          <div className = "w-full h-full bg-white rounded-3xl hidden lg:block">
-
           </div>
         </div>
 

@@ -7,7 +7,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400
 import { SessionProvider } from 'next-auth/react';
 
 export const metadata: Metadata = {
-    title: 'SMA Yos Sudarso Karawang',
+    title: 'Airstra',
     description: 'Innovative School',
 };
 

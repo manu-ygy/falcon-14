@@ -13,6 +13,7 @@ import { useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 import PackDialog from '@/components/custom/dashboard/pack';
 import LuggageDialog from '@/components/custom/dashboard/luggage';
+import NewbieDialog from '@/components/custom/dashboard/newbie';
 const SNSItem = dynamic(() => import('@/components/custom/dashboard/sns'), {ssr: false});
 
 const DashboardFeeds = () => {
@@ -43,10 +44,7 @@ const ToolContainer = () => {
             <div className = "grid grid-cols-2 lg:flex gap-4 items-start">
                 <PackDialog/>
                 
-                <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <img className = "min-w-24 h-24 p-2 rounded-3xl bg-gradient-to-b from-lime-300 to-lime-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/travel-guide-book-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--instruction-tourist-adventure-pack-holidays-illustrations-3626605.png?f=webp"/>
-                    <span className = "max-w-20">Panduan <br/>Pemula</span>
-                </Button>
+                <NewbieDialog/>
 
                 <LuggageDialog/>
             </div>

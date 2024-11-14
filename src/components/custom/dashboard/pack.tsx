@@ -101,10 +101,9 @@ berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seoran
         <DialogHeader className="w-full">
           <DialogTitle className="text-3xl font-semibold text-qmaroon-500">PackAI</DialogTitle>
           <DialogDescription>
-            Ketikkan barang yang mau kamu bawa, dan PackAI akan membantumu menentukan. Tekan Enter untuk menambahkan barang.
+            PackAI siap membantumu mengemas barangmu! Cukup ketikkan barang yang mau kamu bawa, dan PackAI akan mengecek apakah kamu bisa membawa barang itu atau tidak.
           </DialogDescription>
         </DialogHeader>
-
 
         {(!result || result.length == 0) && (
           <>

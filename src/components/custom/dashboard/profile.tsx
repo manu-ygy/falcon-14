@@ -1,7 +1,7 @@
 'use client';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useSession } from 'next-auth/react';
+import { SessionProvider, useSession } from 'next-auth/react';
 import { SignOut, Dot, User, Gear } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/components/ui/button';
 

@@ -9,21 +9,29 @@ const Hero = () => {
             {/*
                        <div className="absolute w-full h-[150svh] min-h-[20rem] -right-0 bottom-0 -z-20 bg-slate-900"></div>
             */}
-            <img src="https://indoaviation.asia/wp-content/uploads/2023/07/QR.jpg" className="absolute h-[calc(100%+8px)] w-2/3 min-h-[20rem] -top-[4px] -left-[4px] blur-sm opacity-50 select-none mask-image-start-50 mask-image-r" alt="Background"/>
+            <img src="https://indoaviation.asia/wp-content/uploads/2023/07/QR.jpg" className="absolute h-[calc(100%+8px)] w-2/3 min-h-[20rem] -top-[4px] -left-[4px] blur-sm opacity-50 select-none mask-image-start-50 mask-image-r object-cover" alt="Background"/>
             <div className="absolute min-h-full w-screen min-w-[1000px] top-0 left-0 bg-gradient-to-r from-qmaroon-500 to-qmaroon-400 opacity-50"></div>
 
             <div className='flex flex-col justify-center z-10 md:w-2/3 w-full px-8 gap-2'>
                 <div className='flex flex-col gap-2'>
-                    <h2 className='text-xl uppercase'>Airstra</h2>
+                    <div className = "flex items-center flex gap-2 bg-white text-qmaroon-500 w-fit px-4 rounded-full mb-4">
+                        <img src = "/images/icon.png" className = "h-16"/>
+                        <h2 className='text-2xl font-semibold'>Airstra</h2>
+                        <span className = "text-sm">dari</span>
+                        <img className = "h-12 bg-white" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Qatar_Airways_logo.svg/2560px-Qatar_Airways_logo.svg.png"/>
+                    </div>
 
-                    <h2 className='text-6xl font-semibold'>Dari terbang sampai mendarat.</h2>
+                    <h2 className='text-5xl font-semibold'>Dari terbang sampai mendarat.</h2>
                 </div>
                 <p className='text-lg max-w-2xl mb-6 opacity-70'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. reprehenderit magni molestiae voluptas labore ab. Eius ratione unde doloremque rerum.
+                Airstra siap membantumu mewujudkan perjalanan bebas pusing dengan berbagai fitur dan alat-alat keren.
                 </p>
-                <Button variant={'default'} className='text-lg md:w-max gap-2'>
-                    Lanjut <ArrowRight weight='bold' />
-                </Button>
+
+                <a href = "/dashboard">
+                    <Button className = "text-lg px-8">
+                        Mulai
+                    </Button>
+                </a>
             </div>
 
             {/* Additional hero image */}

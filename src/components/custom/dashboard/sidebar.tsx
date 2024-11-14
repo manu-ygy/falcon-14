@@ -37,9 +37,9 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ items, forceMobile 
     <div className={cn("flex lg:top-0 fixed lg:sticky bottom-0 flex-row max-md:w-full bg-background/90 backdrop-blur-sm max-md:border-t md:flex-col items-center w-fit max-md:bottom-0 z-30 max-md:p-4 gap-2 p-6", forceMobileStyle, forceMobile ? 'absolute w-full left-0 bottom-0 bg-white' : 'rounded-2xl')}>
         {!forceMobile && 
             <Image
-            src="/images/yss.png"
-            width={32}
-            height={32}
+            src="/images/icon.png"
+            width={48}
+            height={48}
             alt="Logo"
             className={cn("object-contain mb-4", forceMobile ? 'lg:hidden block' : 'lg:block hidden')}
           />

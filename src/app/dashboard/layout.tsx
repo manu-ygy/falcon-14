@@ -39,8 +39,8 @@ export default function DashboardLayout({
                         </div>
                     </div>
 
-                <motion.div initial={{x: '100%'}} animate={{x: 0}} transition={{ ease: "easeInOut", duration: 0.5 }} className = "overflow-hidden w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
-                    <Profile/>
+                    <motion.div initial={{x: '100%'}} animate={{x: 0}} transition={{ ease: "easeInOut", duration: 0.5 }} className = "overflow-hidden w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
+                        <Profile/>
 
                         <h1 className = "text-3xl font-semibold text-qmaroon-500">Notifikasi</h1>
 
@@ -49,9 +49,9 @@ export default function DashboardLayout({
                                 <div className = "relative w-52 h-12">
                                     <img src = "/devin.jpeg" className = "absolute left-0 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
                                     </img>
-                                    <img src = "/devin.jpeg" className = "absolute left-6 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                    <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrKxfjTf49GAtu0PpFXK7mKBgqyJ5MfJCgQw&s" className = "absolute left-6 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
                                     </img>
-                                    <img src = "/devin.jpeg" className = "absolute left-12 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                    <img src = "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" className = "absolute left-12 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
                                     </img>
                                 </div>
 
@@ -67,7 +67,7 @@ export default function DashboardLayout({
                                 <span className = "text-sm"><span className = "font-semibold">Promo!</span> Dapatkan 2 tiket gratis sekarang!</span>
                             </div>
                         </div>
-                </motion.div>
+                    </motion.div>
             </div>
         </main>
     );

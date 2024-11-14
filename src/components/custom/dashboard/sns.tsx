@@ -34,7 +34,7 @@ const SNSItem = () => {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP_8MlFAyOlyouxLVgK5yFluWOTZ8zhODxLw&s',
         'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/230000/230324-Society-Islands.jpg?impolicy=fcrop&w=1040&h=580&q=mediumHigh',
         'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/48/5f/80/bayon-temple.jpg?w=1400&h=1400&s=1',
-        'https://www.tripadvisor.co.id/Tourism-g255122-Queenstown_Otago_Region_South_Island-Vacations.html',
+        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/00/8a/21/queenstown-garden.jpg?w=1400&h=1400&s=1',
         'https://a0.muscache.com/im/pictures/INTERNAL/INTERNAL-ImageByPlaceId-ChIJ1-4miA9QzB0Rh6ooKPzhf2g-large_background/original/24f948ca-81eb-4c42-9098-4f72e2df6611.jpeg',
         'https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2024-03/sapporo-area-guide_9.jpg?itok=zE5_ciqF',
         'https://www.johansens.com/wp-content/uploads/2024/02/Greece-Iconic-Santorini-4-e1718110787901.jpg',
@@ -48,7 +48,7 @@ const SNSItem = () => {
     return (
         <div className = "flex flex-col rounded-3xl relative gap-4">
         <div className = "flex gap-4 items-center ml-4">
-            <img className = "w-16 h-16 rounded-full border border-slate-400/50" src = "https://i.pinimg.com/474x/68/b1/35/68b13553903740a875342bfa4518b228.jpg"></img>
+            <img className = "w-16 h-16 rounded-full border border-slate-400/50" src = "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"></img>
 
             <div className = "z-20 flex flex-col -gap-1">
                 <span className = "font-semibold">{nameList[randomPerson]}</span>

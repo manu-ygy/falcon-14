@@ -14,77 +14,36 @@ import {
 } from "@/components/ui/carousel"
 
 export default function Login() {
-    /*
-        <div className="w-full h-screen bg-zinc-900/50 fixed flex">
-            <div className = "w-full h-full bg-zinc-900/50 absolute top-0 left-0 -z-[10]"></div>
-            <img src="/images/gedung.jpg" className="absolute h-[calc(100%+8px)] w-2/3 min-h-[20rem] -top-[4px] -left-[4px] blur-sm opacity-50 select-none mask-image-r -z-10" alt="Background"/>
-            <div className="absolute w-full h-full bg-primary-gradient top-0 left-0 -z-[11]"></div>
-
-            <div className = "bg-slate-100 p-16 ml-auto w-full flex flex-col gap-8">
-                <div className="flex gap-8 items-center">
-                    <h1 className="text-4xl font-semibold">Login</h1>
-                    <hr className="border-slate-400/50 w-full h-fit"></hr>
-                </div>
-
-                <Suspense fallback={<>Loading...</>}>
-                    <LoginForm />
-                </Suspense>
-
-            </div>
-        </div>
-    */
-
-        const [api, setApi] = React.useState<CarouselApi>()
-        const [current, setCurrent] = React.useState(0)
-        const [count, setCount] = React.useState(0)
+    const [api, setApi] = React.useState<CarouselApi>()
+    const [current, setCurrent] = React.useState(0)
+    const [count, setCount] = React.useState(0)
+    
+    React.useEffect(() => {
+        if (!api) {
+        return
+        }
+    
+        setCount(api.scrollSnapList().length)
+        setCurrent(api.selectedScrollSnap() + 1)
+    
+        api.on("select", () => {
+        setCurrent(api.selectedScrollSnap() + 1)
+        })
+    }, [api])
        
-        React.useEffect(() => {
-          if (!api) {
-            return
-          }
-       
-          setCount(api.scrollSnapList().length)
-          setCurrent(api.selectedScrollSnap() + 1)
-       
-          api.on("select", () => {
-            setCurrent(api.selectedScrollSnap() + 1)
-          })
-        }, [api])
-       
-        return (
-            <div className = "w-full h-full flex p-16 gap-8 items-center justify-center">
-                <div className = "w-full h-full">
-                    <Carousel setApi={setApi} className="w-full max-w-xs">
-                        <CarouselContent>
-                            {Array.from({ length: 5 }).map((_, index) => (
-                            <CarouselItem key={index}>
-                                <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">{index + 1}</span>
-                                </CardContent>
-                                </Card>
-                            </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        
-                        <CarouselPrevious />
-                        <CarouselNext />
-                    </Carousel>
-
-                    <div className="py-2 text-center text-sm text-muted-foreground">
-                        Slide {current} of {count}
-                    </div>
-                </div>
-
-                <div className = "w-full flex flex-col gap-6 bg-slate-100 rounded-3xl p-16 my-auto">
-                    <div className = "flex">
-                        <h1 className = "text-3xl font-semibold">Masuk</h1>
-                    </div>
-
+    return (
+        <div className = "w-full h-screen flex p-8 items-center justify-center">
+            <div className = "w-full h-full relative bg-gradient-to-b from-qmaroon-600 to-qmaroon-400 rounded-3xl">
+                <img src = "https://hips.hearstapps.com/hmg-prod/images/champagne-beach-espiritu-santo-island-vanuatu-royalty-free-image-1655672510.jpg" className = "rounded-3xl object-cover w-full h-full opacity-70 brightness-50"/>
+                <div className = "absolute text-slate-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-1/4 lg:min-w-[400px] flex flex-col gap-4 bg-white rounded-3xl text-zinc-900 p-16">
+                    <h1 className = "font-semibold text-2xl">Mulai liburan tanpa pusingmu!</h1>
+                    <span className = "opacity-70">Airstra siap membantumu untuk mewujudkan liburan santaimu tanpa perlu pusing!</span>
+                
                     <React.Suspense>
                         <LoginForm/>
                     </React.Suspense>
                 </div>
             </div>
-        )
+        </div>
+    )
 }
