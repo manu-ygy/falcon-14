@@ -1,14 +1,18 @@
 'use client'
 
+import Autoplay from "embla-carousel-autoplay"
+
 import {
     AirplaneTilt,
     Bank,
     BowlFood,
     CalendarBlank,
+    Cards,
     Dot,
     ListChecks,
     MagnifyingGlass,
     SpinnerGap,
+    Storefront,
     SuitcaseRolling,
     Ticket,
     Users,
@@ -56,16 +60,23 @@ const Recommendation = () => {
     const recommendations = [
         { city: 'Tokyo', country: 'Japan', code: 'NRT', thumbnailUrl: 'https://assets.editorial.aetnd.com/uploads/2013/07/gettyimages-1390815938.jpg' },
         { city: 'Beijing', country: 'China', code: 'PEK', thumbnailUrl: 'https://www.grandmercure.com/wp-content/uploads/2020/04/BEIJING_1_MAIN-shutterstock_1263558487__001-2200x1200.jpg' },
-        { city: 'Tokyo', country: 'Japan', code: 'NRT', thumbnailUrl: 'https://assets.editorial.aetnd.com/uploads/2013/07/gettyimages-1390815938.jpg' },
-        { city: 'Beijing', country: 'China', code: 'PEK', thumbnailUrl: 'https://www.grandmercure.com/wp-content/uploads/2020/04/BEIJING_1_MAIN-shutterstock_1263558487__001-2200x1200.jpg' },
+        { city: 'Port Moresby', country: 'Papua New Guinea', code: 'POM', thumbnailUrl: 'https://statemag.state.gov/wp-content/uploads/2021/04/0521POM-24.jpg' },
+        { city: 'Sydney', country: 'Australia', code: 'SYD', thumbnailUrl: 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/553000/553956-sydney-harbour-bridge.jpg' },
     ];
+
+    const plugin = React.useRef(
+        Autoplay({ delay: 2000, stopOnInteraction: true })
+    )
 
     return (
         <Carousel
             opts={{
                 align: "start",
             }}
-            className="bg-white rounded-3xl"
+            className="bg-white rounded-3xl relative"
+            plugins={[plugin.current]}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}      
             >
             <CarouselContent>
                 {recommendations.map((item, index) => (
@@ -89,8 +100,6 @@ const Recommendation = () => {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
         </Carousel>
     );
 };
@@ -126,12 +135,11 @@ const RecommendationItem = ({ city, country, code, thumbnailUrl }: { city: strin
                         </div>
 
                         <div className = "absolute top-1/2 -translate-y-1/2 right-0 opacity-50iya ">
-                            <AirplaneTilt className = "text-qgold-500/70" size = {192}/>
+                            <AirplaneTilt className = "text-qmaroon-500/50" size = {192} weight = "fill"/>
                         </div>
 
                         <div className = "flex flex-col pl-6 pr-8 py-8 z-10 justify-center">
                             <span><span className = "font-medium">{city}</span><span className = "opacity-70">, {country}</span></span>
-                            <span className= "text-sm">Rp. 1.500.000,00</span>
                         </div>
                     </div>
                 </div>
@@ -143,7 +151,8 @@ const RecommendationItem = ({ city, country, code, thumbnailUrl }: { city: strin
 const SearchItem = ({ price, destination, date, time, tier }: { price: string, destination: string, date: string, time: string, tier: string }) => {
     return (
         <Button variant={'ghost'} className = "items-start w-full p-8 rounded-3xl border border-slate-400/50 flex flex-col gap-2">
-            <h2 className = "text-2xl font-medium flex gap-2 items-center">{time} <Badge>{tier}</Badge></h2>
+            <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Qatar_Airways_logo.svg/2560px-Qatar_Airways_logo.svg.png" className = "h-8 mb-4"/>
+            <h2 className = "text-2xl font-medium flex gap-2 lg:items-center flex-col lg:flex-row">{time} <Badge className = "w-fit">{tier}</Badge></h2>
             <div className = "flex gap-2 opacity-70 items-center flex-wrap">
                 <span>{destination}</span>
 
@@ -164,7 +173,7 @@ const BookingPopup = () => {
     const [bookingState, setBookingState] = React.useState<string>('preview')
 
     return (
-        <DialogContent>
+        <DialogContent className = "max-h-[90vh] overflow-y-auto">
             {(bookingState === 'preview') ? (
                 <>
                     <DialogHeader>
@@ -268,11 +277,11 @@ const BookingPopup = () => {
                         </Button>
 
                         <Button className = "border rounded-3xl border-slate-400/50 gap-4" variant={'ghost'}>
-                            <Bank size = {20}/> <span>Kartu kredit</span>
+                            <Cards size = {20}/> <span>Kartu kredit</span>
                         </Button>
 
                         <Button className = "border rounded-3xl border-slate-400/50 gap-4" variant={'ghost'}>
-                            <Bank size = {20}/> <span>Minimarket</span>
+                            <Storefront size = {20}/> <span>Minimarket</span>
                         </Button>
                     </div>
 
@@ -382,7 +391,7 @@ const TicketPage = () => {
                                     Cari</Button>
                             </div>
 
-                            <div className = "flex gap-4 mx-4">
+                            <div className = "flex flex-col lg:flex-row gap-4 mx-4">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger className = "flex gap-2 text-sm p-0 opacity-70 hover:opacity-100 transition hover:underline">
                                         <CalendarBlank size = {20}/>

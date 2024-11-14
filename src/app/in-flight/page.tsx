@@ -3,6 +3,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
     Airplane,
+    CalendarBlank,
+    Clock,
     ListChecks,
     ThermometerSimple,
 } from '@phosphor-icons/react/dist/ssr';
@@ -106,9 +108,18 @@ const Notch = () => {
 const InFlightPage = () => {
     return (
         <div className = "w-full h-full relative p-4 flex flex-col gap-4">
-            <div className = "w-full bg-slate-100 p-4 rounded-3xl flex items-center text-sm gap-2">
-                <ThermometerSimple size = {16}/>
-                <span>26 C</span>
+            <div className = "w-full bg-slate-100 p-4 rounded-3xl flex text-xs gap-2 opacity-80">
+                <div className = "w-full flex items-center justify-center gap-2 border-r border-slate-400/50">
+                    <span>25 Jan</span>
+                </div>
+
+                <div className = "w-full flex border-r border-slate-400/50 justify-center items-center gap-2">
+                    <span>14:50</span>
+                </div>
+
+                <div className = "w-full flex justify-center items-center gap-2">
+                    <span>26° C</span>
+                </div>
             </div>
 
             <div className = "w-full h-full bg-white relative rounded-3xl">
@@ -155,13 +166,13 @@ const InFlightPage = () => {
                 </a>
 
                 <Button className = "w-full col-span-2 flex flex-col p-0 gap-2" variant={'ghost'}>
-                    <div className = "w-full h-full rounded-3xl bg-gradient-to-b from-pink-500 to-pink-300 relative">
+                    <a className = "w-full h-full rounded-3xl bg-gradient-to-b from-pink-500 to-pink-300 relative" href = "/in-flight/explore">
                         <div className = "absolute w-full h-32 bottom-0 overflow-hidden rounded-3xl">
                             <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/torii-gate-3d-icon-download-in-png-blend-fbx-gltf-file-formats--bonzai-japan-asian-pack-holidays-icons-8878357.png&s" className = "-bottom-5 absolute left-1/2 -translate-x-1/2 w-[105px]"/>
                             <img src = "/images/daruma.png" className = "absolute z-10 w-[80px] -bottom-4 right-2 -scale-x-100"/>
                             <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/sushi-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--roll-japanese-food-pack-drink-illustrations-3895631.png?f=webp" className = "absolute -bottom-6 w-[70px] left-2 -scale-x-100"></img>
                         </div>
-                    </div>
+                    </a>
                     <span className = "text-xs">Kenali Jepang!</span>
                 </Button>
             </div>

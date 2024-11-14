@@ -21,11 +21,9 @@ export default function DashboardLayout({
         { icon: House, title: 'Beranda', href: '/dashboard' },
         { icon: Camera, title: 'Travelinspo', href: '/dashboard/sns'},
         { icon: Ticket, title: 'Pesan', href: '/dashboard/booking' },
-        { icon: User, title: 'Profil', href: '/dashboard/profile' }
     ];  
 
     return (
-        <Transition>
             <main className="fixed flex flex-col row relative w-full h-screen overflow-hidden">
                 <div className = "flex flex-row relative w-full h-screen pt-8 overflow-y-auto">
                     <DashboardSidebar items={links}/>
@@ -41,37 +39,36 @@ export default function DashboardLayout({
                         </div>
                     </div>
 
-                    <motion.div initial={{x: '100%'}} animate={{x: 0}} transition={{ ease: "easeInOut", duration: 0.5 }} className = "w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
-                            <Profile/>
+                <motion.div initial={{x: '100%'}} className = "overflow-hidden" animate={{x: 0}} transition={{ ease: "easeInOut", duration: 0.5 }} className = "w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
+                    <Profile/>
 
-                            <h1 className = "text-3xl font-semibold text-qmaroon-500">Notifikasi</h1>
+                        <h1 className = "text-3xl font-semibold text-qmaroon-500">Notifikasi</h1>
 
-                            <div className = "flex flex-col gap-4">
-                                <div className = "w-full border border-slate-400/50 rounded-3xl p-4 flex gap-4 items-center">
-                                    <div className = "relative w-52 h-12">
-                                        <img src = "/devin.jpeg" className = "absolute left-0 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
-                                        </img>
-                                        <img src = "/devin.jpeg" className = "absolute left-6 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
-                                        </img>
-                                        <img src = "/devin.jpeg" className = "absolute left-12 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
-                                        </img>
-                                    </div>
-
-                                    
-                                    <span className = "text-sm"><span className = "font-semibold">Devin Hong</span> dan 2 lainnya mengirim perjalanan mereka.</span>
+                        <div className = "flex flex-col gap-4">
+                            <div className = "w-full border border-slate-400/50 rounded-3xl p-4 flex gap-4 items-center">
+                                <div className = "relative w-52 h-12">
+                                    <img src = "/devin.jpeg" className = "absolute left-0 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                    </img>
+                                    <img src = "/devin.jpeg" className = "absolute left-6 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                    </img>
+                                    <img src = "/devin.jpeg" className = "absolute left-12 top-1/2 -translate-y-1/2 border-4 border-white w-12 h-12 rounded-full object-cover">
+                                    </img>
                                 </div>
 
-                                <div className = "w-full border border-slate-400/50 rounded-3xl p-4 flex gap-4 items-center">
-                                    <div className = "min-w-12 h-12 bg-gradient-to-b from-indigo-600 to-indigo-400 rounded-full border-4 border-white flex items-center justify-center text-slate-100">
-                                        <Confetti size={24}/>
-                                    </div>
-                                    
-                                    <span className = "text-sm"><span className = "font-semibold">Promo!</span> Dapatkan 2 tiket gratis sekarang!</span>
-                                </div>
+                                
+                                <span className = "text-sm"><span className = "font-semibold">Devin Hong</span> dan 2 lainnya mengirim perjalanan mereka.</span>
                             </div>
-                    </motion.div>
-                </div>
-            </main>
-        </Transition>
+
+                            <div className = "w-full border border-slate-400/50 rounded-3xl p-4 flex gap-4 items-center">
+                                <div className = "min-w-12 h-12 bg-gradient-to-b from-indigo-600 to-indigo-400 rounded-full border-4 border-white flex items-center justify-center text-slate-100">
+                                    <Confetti size={24}/>
+                                </div>
+                                
+                                <span className = "text-sm"><span className = "font-semibold">Promo!</span> Dapatkan 2 tiket gratis sekarang!</span>
+                            </div>
+                        </div>
+                </motion.div>
+            </div>
+        </main>
     );
 }

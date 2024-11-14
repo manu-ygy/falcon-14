@@ -97,7 +97,7 @@ berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seoran
           <span>PackAI</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-full p-8">
+      <DialogContent className="w-full p-8 max-h-[calc(100%-2rem)] overflow-y-auto">
         <DialogHeader className="w-full">
           <DialogTitle className="text-3xl font-semibold text-qmaroon-500">PackAI</DialogTitle>
           <DialogDescription>

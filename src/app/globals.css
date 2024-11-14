@@ -120,16 +120,11 @@
 
   /* Track of the scrollbar */
   ::-webkit-scrollbar-track {
-    @apply bg-inherit bg-slate-950;
+    @apply bg-inherit;
   }
 
   /* Handle of the scrollbar */
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-100 rounded-2xl;
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-indigo-500;
-  }
+    @apply bg-slate-300 rounded-full;
 }
 }

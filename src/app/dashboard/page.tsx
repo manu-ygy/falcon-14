@@ -1,4 +1,5 @@
 'use client'
+import dynamic from 'next/dynamic'
 
 import {
     ChatCenteredDots,
@@ -7,10 +8,12 @@ import {
     AirplaneTilt
 } from '@phosphor-icons/react/dist/ssr';
 
+import { useSession } from 'next-auth/react';
+
 import { Button } from '@/components/ui/button';
 import PackDialog from '@/components/custom/dashboard/pack';
 import LuggageDialog from '@/components/custom/dashboard/luggage';
-import SNSItem from '@/components/custom/dashboard/sns';
+const SNSItem = dynamic(() => import('@/components/custom/dashboard/sns'), {ssr: false});
 
 const DashboardFeeds = () => {
     return (
@@ -18,6 +21,16 @@ const DashboardFeeds = () => {
             <h1 className = "text-3xl font-semibold text-qmaroon-500">Travelinspo</h1>
 
             <SNSItem/>
+
+            <div className = "flex gap-4">
+            <a href = "" className = "w-full">
+                <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZS1e0nTDhp3WWnJ8t2BzutaCVko3ulDSJw&s" className = "w-full h-32 rounded-3xl object-cover"/>
+            </a>
+
+            <a href = "" className = "w-full">
+                <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZS1e0nTDhp3WWnJ8t2BzutaCVko3ulDSJw&s" className = "w-full h-32 rounded-3xl object-cover"/>
+            </a>
+            </div>
         </div>
     );
 };
@@ -32,7 +45,7 @@ const ToolContainer = () => {
                 
                 <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
                     <img className = "min-w-24 h-24 p-2 rounded-3xl bg-gradient-to-b from-lime-300 to-lime-400" src = "https://cdn3d.iconscout.com/3d/premium/thumb/travel-guide-book-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--instruction-tourist-adventure-pack-holidays-illustrations-3626605.png?f=webp"/>
-                    <span className = "max-w-20">Newbie <br/>guide</span>
+                    <span className = "max-w-20">Panduan <br/>Pemula</span>
                 </Button>
 
                 <LuggageDialog/>
@@ -46,44 +59,63 @@ const News = () => {
         <div className = "bg-white rounded-3xl p-8 flex flex-col gap-6">
             <h1 className = "text-3xl font-semibold text-qmaroon-500">Promo</h1>
 
-            <div className = "w-full flex flex-col rounded-2xl border border-slate-400/50 p-8 gap-8 items-center">
-                <div className="text-3xl font-black">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-qmaroon-600 to-qmaroon-400 uppercase word-break">
-                        Beli 1 Gratis 1
-                    </span>
+            <div className = "w-full flex flex-col rounded-2xl border border-slate-400/50 p-8 gap-8 items-center relative overflow-hidden">
+                <div className="text-3xl font-semibold z-10">
+                    Ngidam Ramen? Langsung ke Jepang aja!
                 </div>
 
                 <div className = "w-full flex flex-col gap-2">
-                    <span>Dapatkan promo menarik </span>
+                    <span className = "z-10 opacity-70">Jangan lewatkan kesempatan menikmati Ramen otentik dari Jepang dengan diskon 25% tiket sekarang! </span>
 
-                    <div className = "border border-slate-400/50 p-2 rounded-3xl">
-                        <span className = "text-sm opacity-70">Kadaluarsa dalam</span>
-                        <div className = "font-mono text-2xl">
-                            20:00:00
-                        </div>
+                    <span className = "text-sm opacity-80 mt-4">Berlaku sampai</span>
+                    <div className = "">
+                        20 Januari 2025
                     </div>
                 </div>
+
+                <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/ramen-3d-icon-download-in-png-blend-fbx-gltf-file-formats--noodle-noodles-bowl-restaurant-japanese-pack-culture-religion-festivals-icons-4847159.png" className = "absolute mask-image-t mask-image-start-40 bottom-0 select-none right-0 translate-x-1/4 translate-y-1/4 -scale-x-100 -rotate-12"/>
+            </div>
+
+            <div className = "w-full flex flex-col rounded-2xl border border-slate-400/50 p-8 gap-8 items-center relative overflow-hidden">
+                <div className="text-3xl font-semibold z-10">
+                    Kapan lagi ke Korea berdua?
+                </div>
+
+                <div className = "w-full flex flex-col gap-2">
+                    <span className = "z-10 opacity-80">Dapatkan promo beli satu gratis satu tiket perjalanan ke Korea! </span>
+
+                    <span className = "text-sm opacity-70 mt-4">Berlaku sampai</span>
+                    <div className = "">
+                        20 Januari 2025
+                    </div>
+                </div>
+
+                <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/man-hanbok-3d-icon-download-in-png-blend-fbx-gltf-file-formats--korean-outfit-culture-clothing-cultural-dress-pack-religion-festivals-icons-7781475.png?f=webp" className = "absolute mask-image-t mask-image-start-40 bottom-0 select-none right-0 translate-x-1/4 translate-y-1/4 -scale-x-100 -rotate-12"/>
             </div>
         </div>
     )
 }
 
 const DashboardPage = () => {
+    const { data } = useSession({
+        required: true
+    });
+
     return (
         <div className = "flex flex-col gap-6">
             <div className = "flex flex-col h-64 bg-zinc-900 rounded-3xl relative group overflow-hidden">
                 <div className = "absolute w-full h-full top-o left-0 bg-gradient-to-r from-qmaroon-500 to-qmaroon-400 opacity-70 rounded-3xl"></div>
-                <img className = "absolute w-full h-full object-cover top-o left-0 rounded-3xl opacity-60 group-hover:opacity-100 scale-100 group-hover:scale-125 transition duration-500" src = "https://deih43ym53wif.cloudfront.net/Bora-Bora-French-Polynesia-shutterstock_1400768336.jpg_3eb9ccf93e.jpg"/>
+                <img className = "absolute w-full h-full object-cover top-o left-0 rounded-3xl opacity-60 group-hover:opacity-100 scale-100 group-hover:scale-125 transition duration-500" src = "https://cdn.idntimes.com/content-images/post/20221015/marc-kargel-qb3z5bfiagg-unsplash-e5ad7e4fae1ec269f84ada6c1591b4ac.jpg"/>
                 <div className = "absolute bottom-8 left-8 flex flex-col text-slate-200 gap-1 opacity-100 group-hover:opacity-0">
-                    <h1 className = "text-3xl font-semibold">Hai, Manu! 👋</h1>
-                    <span className = "text-sm opacity-70 font-medium">Lorem ipsum dolor sit, re dolores unde quas quia distinctio?</span>
+                    <h1 className = "text-3xl font-semibold">Hai, {data?.user?.name} 👋</h1>
+                    <span className = "text-sm font-medium">Sudah siap untuk nikmati liburan tanpa rasa pusing?</span>
                 </div>
                 
-                <div className = "flex flex-col absolute bottom-8 right-8 w-fit gap-1 items-end">
+                <div className = "flex-col absolute bottom-8 right-8 w-fit gap-1 items-end hidden lg:flex">
                     <span className = "text-xs text-slate-100 opacity-80 font-medium group-hover:opacity-100">Gambar sponsor</span>
                     <div className = "bg-slate-100 rounded-full px-4 py-2.5 w-fit text-sm gap-2 items-center group-hover:opacity-100 transition duration-500 opacity-70 font-semibold flex">
                         <MapPinArea size = {16} weight='bold'/>
-                        <span>Florida, US</span>
+                        <span>Alpen, Swiss</span>
                     </div>
                 </div>
             </div>

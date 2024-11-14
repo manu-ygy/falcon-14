@@ -52,7 +52,7 @@ const Profile = () => {
 
                         <div className="flex flex-col gap-2">
                             <h2 className="text-xl font-semibold">{user?.name}</h2>
-                            <span className="rounded-full bg-qgold-500 text-sm text-slate-100 font-medium w-fit px-2.5 py-1 text-center">Master Traveler</span>
+                            <span className="rounded-full bg-qmaroon-500 text-sm text-slate-100 font-medium w-fit px-2.5 py-1 text-center">Penjelajah Ahli</span>
                         </div>
                     </>
                 )}
