@@ -44,7 +44,7 @@ const getLocation = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button className = "flex flex-col p-0 gap-2" variant={'ghost'}>
-        <img className = "min-w-24 h-24 rounded-3xl" src = "https://media.istockphoto.com/id/1451724167/vector/3d-vector-yellow-suitcase-summer-holiday-time-to-travel-concept.jpg?s=612x612&w=0&k=20&c=D-8GdSmOA7M2Mf511MVA-TDnrUjXCEeHws0zn93kFkU="/>
+        <img className = "min-w-24 h-24 rounded-3xl bg-gradient-to-b from-orange-400 to-orange-200" src = "https://cdn3d.iconscout.com/3d/premium/thumb/luggage-3d-icon-download-in-png-blend-fbx-gltf-file-formats--travel-baggage-trolley-bag-summer-beach-vacation-pack-island-icons-5043770.png?f=webp"/>
             <span>Pelacak <br/>Koper</span>
         </Button>
       </DialogTrigger>
@@ -75,6 +75,12 @@ const getLocation = () => {
             </>
         ) : (
             <>
+                <div className = "w-full rounded-3xl h-64 relative mt-2 bg-gradient-to-b from-orange-400 to-orange-200">
+                    <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/luggage-3d-icon-download-in-png-blend-fbx-gltf-file-formats--travel-baggage-trolley-bag-summer-beach-vacation-pack-island-icons-5043770.png?f=webp" className = "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px]"/>
+                </div>
+
+                <hr/>
+
                 <Label>ID koper</Label>
                 <Input onChange={(event) => setId(event.target.value)} value={id}/>
 

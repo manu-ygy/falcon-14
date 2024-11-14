@@ -105,6 +105,17 @@ berdasarkan daftar barang-barang tersebut, dapatkan anda berperan menjadi seoran
           </DialogDescription>
         </DialogHeader>
 
+
+        {(!result || result.length == 0) && (
+          <>
+            <div className = "w-full rounded-3xl h-64 relative mt-2 bg-gradient-to-b from-violet-300 to-violet-400">
+                <img src = "https://cdn3d.iconscout.com/3d/premium/thumb/open-luggage-3d-icon-download-in-png-blend-fbx-gltf-file-formats--hello-logo-bag-suitcase-halloween-travel-element-pack-icons-8904803.png?f=webp" className = "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px]"/>
+            </div>
+
+            <hr/>
+          </>
+        )}
+
         <div className="flex flex-col w-full gap-2">
             <span className="text-sm font-medium">Negara tujuan:</span>
 

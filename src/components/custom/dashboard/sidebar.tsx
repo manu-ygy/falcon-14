@@ -34,14 +34,14 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ items, forceMobile 
   : ''
   
   return (
-    <div className={cn("flex lg:sticky lg:top-0 flex-row max-md:fixed max-md:w-full max-md:bg-background/90 max-md:backdrop-blur-sm max-md:border-t md:flex-col items-center w-fit max-md:bottom-0 z-30 max-md:p-4 gap-2 p-6", forceMobileStyle, forceMobile ? 'absolute w-full left-0 bottom-0 bg-white' : 'rounded-2xl')}>
+    <div className={cn("flex lg:top-0 fixed lg:sticky bottom-0 flex-row max-md:w-full bg-background/90 backdrop-blur-sm max-md:border-t md:flex-col items-center w-fit max-md:bottom-0 z-30 max-md:p-4 gap-2 p-6", forceMobileStyle, forceMobile ? 'absolute w-full left-0 bottom-0 bg-white' : 'rounded-2xl')}>
         {!forceMobile && 
             <Image
             src="/images/yss.png"
             width={32}
             height={32}
             alt="Logo"
-            className="object-contain mb-4"
+            className={cn("object-contain mb-4", forceMobile ? 'lg:hidden block' : 'lg:block hidden')}
           />
         }
 
@@ -80,7 +80,7 @@ const DashboardItem: React.FC<{ item: LinkItem, forceMobile: Boolean }> = ({ ite
       <Link
         href={item.href}
       >
-        <div className = "flex flex-col text-center items-center gap-1 !w-12">
+        <div className = "flex flex-col text-center items-center gap-1 w-full lg:!w-12">
           <IconComponent className={cn(
             'transition-all relative flex items-center p-3 justify-center max-md:w-full !w-12 !h-12 rounded-full items-center max-md:gap-1 gap-4',
             styleActive,

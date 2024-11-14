@@ -8,7 +8,7 @@ import { Badge } from "lucide-react";
 const GamePage = () => {
     return (
         <div className = "w-full h-full relative p-4 flex flex-col gap-4">
-            <a className = "text-sm" href = "/">Kembali</a>
+            <a className = "text-sm font-semibold" href = "/in-flight">Kembali</a>
             
             <div className = "w-full p-4 rounded-3xl border border-slate-400/50 flex items-center">
                 <div className = "relative w-40 h-12">

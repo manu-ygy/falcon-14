@@ -12,7 +12,7 @@ const SNSItem = () => {
             </div>
         </div>
 
-        <img className = "rounded-3xl z-10" src = "https://linebank.co.id/blog/wp-content/uploads/2022/12/5_shutterstock_1041475570-1-jpg-webp.webp"></img>
+        <img className = "rounded-3xl z-10 w-full" src = "https://linebank.co.id/blog/wp-content/uploads/2022/12/5_shutterstock_1041475570-1-jpg-webp.webp"></img>
 
         <div className = "z-20 px-4 py-2.5 flex gap-2.5 items-center">
             <ChatCenteredDots size={24}/>

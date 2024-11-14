@@ -30,6 +30,22 @@ export default function Home() {
                 </div>
             </section>
 
+            <section>
+              <div className = "flex flex-col w-full h-full lg:p-32">
+                <h1 className = "text-3xl font-semibold">Berbagai fitur untuk liburanmu!</h1>
+                
+                <div className = "w-full h-full grid grid-cols-3">
+                  <div className = "flex">
+                    <div className = "">
+
+                    </div>
+
+                    <h2>Pesan tiket</h2>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <Footer />
         </main >
     );
