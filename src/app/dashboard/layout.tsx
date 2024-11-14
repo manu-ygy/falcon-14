@@ -39,7 +39,7 @@ export default function DashboardLayout({
                         </div>
                     </div>
 
-                <motion.div initial={{x: '100%'}} className = "overflow-hidden" animate={{x: 0}} transition={{ ease: "easeInOut", duration: 0.5 }} className = "w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
+                <motion.div initial={{x: '100%'}} animate={{x: 0}} transition={{ ease: "easeInOut", duration: 0.5 }} className = "overflow-hidden w-1/4 bg-white mt-6 rounded-3xl mx-6 flex-col gap-6 sticky top-6 hidden lg:flex">
                     <Profile/>
 
                         <h1 className = "text-3xl font-semibold text-qmaroon-500">Notifikasi</h1>

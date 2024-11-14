@@ -80,7 +80,10 @@ export default function Login() {
                     <div className = "flex">
                         <h1 className = "text-3xl font-semibold">Masuk</h1>
                     </div>
-                    <LoginForm/>
+
+                    <React.Suspense>
+                        <LoginForm/>
+                    </React.Suspense>
                 </div>
             </div>
         )
